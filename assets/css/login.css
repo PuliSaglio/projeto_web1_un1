@@ -1,49 +1,107 @@
+/*responsividade para telas menores que 768px*/
+@media (max-width: 768px) {
+    .container-body {
+        flex-direction: column;
+    }
+}
+
 body {
+    display: flex;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     height: 100vh; 
     
 }
-
+/*#################################
+    HEADER  
+  ###############################*/
 header {
-    background-color: #1E3A8A;
     justify-content: center;
     align-items: center;
+    display: flex;
+    padding: 20px 0;
 }
 
 header h1 {
     margin: 0;
-    color: white;
+    color: black;
     text-align: center;
-   padding-top: 10px;
+    font-weight: bold;
+    padding: 10px;
 }
 
 nav {
-    align-items: center;
-    justify-content: left;
+    margin-top: 10px;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
 }
 
-nav a {
-    color: white;
-    margin-right: 15px;
-    text-decoration: none;
-    padding: 10px;
+nav a{
+    padding: 8px 12px;
+}
+
+/*####################################
+    MAIN - CORPO PRINCIPAL DA PÁGINA
+  ###################################*/
+main h2{
+    color: #067a55;
+
 }
 
 .menu-navegacao:hover{
     border-bottom: 2px solid black;
 }
 
+/*  DIV CENTRAL BODY  */
+.container-body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* Div da esquerda ocupando 50% */
+#div-esquerda {
+    width: 50%;
+    height: 100vh;
+    padding: 40px;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+}
+
+/* Div da direita ocupando 50% */
+#div-direita {
+    width: 50%;
+    height: 80%;
+    padding: 40px;
+  }
+  
+/* Slider com imagens sobrepostas */
+.slider {
+position: relative;
+width: 50%;
+height: 50%;
+}
+
+.slide {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+opacity: 100%;
+transition: opacity 1s ease-in-out;
+}
+
 main {
     padding: 2rem;
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
     flex-direction: column;
 }
 
@@ -83,18 +141,23 @@ input, button {
 #botao-entrar{
     margin-top: 20px;
     border: none;
-    background-color: aquamarine;
+    background-color: white;
     font-weight: bold;
+    border: #1c4c38 solid 1px;
+    border-radius: 5px;
+    color: #1c4c38;
 
 }
 
 #botao-entrar:hover{
     cursor: pointer;
     border: none;
+    background-color: #a6f4c5;
 
 }
 
 a{
     color: black;
+    text-decoration: none;
 
 }

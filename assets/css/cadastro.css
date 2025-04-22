@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #1E3A8A;
+    background-color:#a6f4c5;
     justify-content: center;
     align-items: center;
 }
@@ -20,6 +20,11 @@ header h1 {
     color: white;
     text-align: center;
    padding-top: 10px;
+}
+
+main h2{
+    color: #067a55;
+
 }
 
 nav {
@@ -75,20 +80,21 @@ input, button {
 #botao-cadastrar{
     margin-top: 20px;
     border: none;
-    background-color: aquamarine;
+    background-color: white;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    border-radius: 2%;
-    color: white;
+    border: #1c4c38 solid 1px;
+    border-radius: 5px;
+    color: #1c4c38;
 
 }
 
 #botao-cadastrar:hover{
     cursor: pointer;
-    color: black;
+    border: none;
+    background-color: #a6f4c5;
 
 }
+
 
 label{
     display: block;
