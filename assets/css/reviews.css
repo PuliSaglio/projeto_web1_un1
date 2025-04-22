@@ -287,4 +287,130 @@ body {
   .footer-col ul li:hover {
     text-decoration: underline;
   }
+
+  .logo-col .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+  }
   
+@media (max-width: 768px) {
+  .topbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00e1b4;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .reviews-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .see-all {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 15px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .topbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00e1b4;
+    position: static;
+    transform: translateX(0);
+    margin: 8px 0px;
+  }
+
+  .topbar a{
+    margin-bottom: 0;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .review-card {
+    max-width: 90%;
+    padding: 14px;
+    font-size: 0.85rem;
+  }
+
+  .review-card h2 {
+    font-size: 1rem;
+  }
+
+  .review-text {
+    font-size: 0.85rem;
+  }
+
+  .reviews-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .reviews-header p {
+    font-size: 0.95rem;
+  }
+
+  .feedback-section {
+    padding: 20px 8px;
+    max-width: 90%;
+  }
+
+  .feedback-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .feedback-header p {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .feedback-form button {
+    width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-col {
+    margin-bottom: 20px;
+  }
+}
+
