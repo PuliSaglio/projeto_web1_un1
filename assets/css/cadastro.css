@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    
+}
+
+header {
+    background-color: #1E3A8A;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    text-align: center;
+   padding-top: 10px;
+}
+
+nav {
+    align-items: center;
+    justify-content: left;
+    display: flex;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu-navegacao:hover{
+    border-bottom: 2px solid black;
+}
+
+main {
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-cadastro{
+    margin-top: 20px;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: blanchedalmond;
+    padding: 5%;
+    border-radius: 4%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    align-items: flex-start;
+}
+
+input, button {
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+}
+
+#botao-cadastrar{
+    margin-top: 20px;
+    border: none;
+    background-color: aquamarine;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    border-radius: 2%;
+    color: white;
+
+}
+
+#botao-cadastrar:hover{
+    cursor: pointer;
+    color: black;
+
+}
+
+label{
+    display: block;
+    text-align: left;
+
+}
+
+#bottom-botao{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

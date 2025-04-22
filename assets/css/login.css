@@ -62,6 +62,9 @@ main section{
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: blanchedalmond;
+    padding: 5%;
+    border-radius: 4%;
 }
 
 .formulario {
@@ -80,14 +83,18 @@ input, button {
 #botao-entrar{
     margin-top: 20px;
     border: none;
-    background-color: antiquewhite;
+    background-color: aquamarine;
     font-weight: bold;
 
 }
 
 #botao-entrar:hover{
     cursor: pointer;
-    background-color: aquamarine;
     border: none;
+
+}
+
+a{
+    color: black;
 
 }
