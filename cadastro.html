@@ -9,42 +9,49 @@
 </head>
 
 <body>
-    <header>
-        <h1>Criar uma nova conta</h1>
-        <nav>
-            <a class="menu-navegacao" href="cadastro.html">Cadastro</a>
-            <a class="menu-navegacao" href="login.html">Login</a>
-        </nav>
-    </header>
+    
+    <div class="container-body">
 
-    <main>
-        <section>
-            <h2>Realize seu cadastro</h2>
-            <p>Insira as informações solicitadas</p>
-        </section>
-
-        <div class="container-cadastro">
-            <form class="formulario" action="">
-                <label for="nome">Nome completo</label>
-                <input type="text" name="nome" placeholder="Nome completo" required>
-                
-                <label for="nome">E-mail</label>
-                <input type="email" name="email" placeholder="E-mail" required>
-
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Senha" required>
-                
-                <label for="senha">Repita a senha</label>
-                <input type="password" name="senha" placeholder="Senha" required>
-                
-                <div id="bottom-botao">
-                <button id="botao-cadastrar" type="submit">Cadastrar</button>
-                </div>
-            
-            </form>
+        <div id="div-esquerda">
+        
+            <div class="slider">
+                <img src="assets/images/Paris.jpg" alt="Praia" class="slide">
+            </div>
+        
         </div>
-    </main>
+        
+        <div id="div-direita">
+        
+            <header>
+                <h1><a href="index.html">IMD Viagens</a></h1>
+                <h2>Cadastro</h2>
+            </header>
+    
+            <main>
+                <section>
+                    <p>Preencha os campos solicitados</p>
+                </section>
+        
+                <div class="container-login">
+                    <form class="formulario" action="">
+                        <input type="text" name="nome" placeholder="Nome completo" required>
+                        <input type="email" name="email" placeholder="E-mail" required>
+                        <input type="tel" name="telefone" placeholder="Telefone" required>
+                        <input type="password" name="senha" placeholder="Senha" required>
+                        <div id="termos">
+                            <input type="checkbox" name="check" placeholder="Confirmo"> 
+                            <label class="checkbox-container">Aceito os <a href="termos.html">termos</a></label>
+                        </div>
+                        <button id="botao-entrar" type="submit">Cadastrar</button>
+                    </form>
+                </div>
+            </main>
+        
 
+        </div>
+
+
+    </div>
 
 
 </body>
