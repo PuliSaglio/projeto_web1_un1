@@ -14,11 +14,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    align-items: center;  /* <-- Correção aqui */
-    justify-content: center;  /* <-- Correção aqui */
+    align-items: center;  
+    justify-content: center; 
     height: 100vh; 
 }
-
 
 /*#################################
     HEADER  
@@ -47,7 +46,6 @@ header h2 {
     text-align: left;
     font-weight: bold;
 }
-
 
 /*####################################
     MAIN - CORPO PRINCIPAL DA PÁGINA
@@ -126,17 +124,17 @@ main section{
 
 .formulario {
     display: flex;
-    flex-direction: column;  /* <-- Importante para alinhar os inputs em coluna */
+    flex-direction: column;  
     gap: 10px;
-    align-items: flex-start;  /* ou center se preferir tudo centralizado */
+    align-items: flex-start;  
 }
 
 #termos {
     display: flex;
     align-items: center;
     gap: 8px; /* espaço entre o checkbox e o texto */
-    justify-content: flex-start; /* garante alinhamento à esquerda */
-    margin-top: 10px; /* opcional: separação vertical */
+    justify-content: flex-start; /* alinhamento à esquerda */
+    margin-top: 10px; 
   }
   
 #termos input[type="checkbox"] {
