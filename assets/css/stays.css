@@ -461,6 +461,66 @@ body {
     border-radius: 12px;
 }
 
+/* FOOTER */
+.footer {
+    background-color: #97d8be;
+    padding: 60px 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer .footer-content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.footer .footer-col h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.footer .footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .footer-col ul li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #111;
+    cursor: pointer;
+}
+
+.footer .footer-col ul li:hover {
+    text-decoration: underline;
+}
+
+.footer .logo-col .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.footer .o-logo {
+    font-family: monospace;
+}
+
+.footer .social-icons a {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    color: #111;
+    text-decoration: none;
+}
+
+.footer .social-icons a:hover {
+    color: #333;
+}
+
 @media (max-width: 1024px) {
 
     /* NAVBAR */
@@ -471,5 +531,70 @@ body {
     /* HERO */
     .hero-search {
         bottom: -240px;
+    }
+
+    /* RECENT SEARCHS */
+    .recent-searchs .recent-cards {
+        justify-content: center;
+    }
+
+    /* TRAVEL SECTION */
+    .travel-section .travel-content {
+        grid-template-columns: 1fr;
+    }
+
+    .travel-section .left-box {
+        margin-bottom: 20px;
+    }
+
+    .travel-section .gallery-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .travel-section .see-all-button {
+        margin-top: 20px;
+    }
+
+    /* FOOTER */
+    .footer .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+
+    /* HERO */
+    .hero .hero-search {
+        bottom: -440px;
+    }
+
+
+    /* RECENT SEARCH */
+    .recent-searchs {
+        margin-top: 240px;
+    }
+
+    /* TRAVEL DEALS */
+    .travel-deals .deals-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .travel-deals .deal-card {
+        width: 90%;
+    }
+
+    /* TRAVEL SECTION */
+    .travel-section .top-text {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .travel-section .gallery-images {
+        grid-template-columns: 1fr;
+    }
+
+    .travel-section .see-all-button {
+        margin-top: 20px;
     }
 }

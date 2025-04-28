@@ -356,7 +356,7 @@ body {
 }
 
 /* FOOTER */
-.footer  {
+.footer {
     background-color: #97d8be;
     padding: 60px 40px;
     font-family: 'Inter', sans-serif;
@@ -423,7 +423,7 @@ body {
     }
 
     /* HERO */
-    .hero-search {
+    .hero .hero-search {
         bottom: -240px;
     }
 
@@ -446,7 +446,7 @@ body {
 @media (max-width: 640px) {
 
     /* HERO */
-    .hero-search {
+    .hero .hero-search {
         bottom: -440px;
     }
 
