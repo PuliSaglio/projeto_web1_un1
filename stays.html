@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMD - Agência de Viagens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/stays.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="left">
+                <a href="#">✈️ <span>Voos</span></a>
+                <a href="#" class="active">🛏️ <span>Hospedagens</span></a>
+            </div>
+            <div class="logo">
+                <a href="#">IMD Viagens</a>
+            </div>
+            <div class="right">
+                <a href="#">Login</a>
+                <a href="#" class="signup">Cadastro</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-image">
+                <div class="text">
+                    <h1>Faça sua lista de desejos de viagem, <span>nós fazemos o resto.</span></h1>
+                    <p>Ofertas especiais todos os dias!</p>
+                </div>
+            </div>
+            <div class="hero-search">
+                <form action="#">
+                    <h2>Para onde você está voando?</h2>
+                    <div class="row">
+                        <div>
+                            <div>
+                                <label for="fromTo">Destino</label>
+                                <input type="text" id="fromTo" placeholder="Natal - Tokyo" />
+                            </div>
+                            <div>
+                                <label for="passengerClass">Quartos & Hóspedes</label>
+                                <input type="text" id="passengerClass" placeholder="1 Passageiro, Econômica" />
+                            </div>
+
+                        </div>
+                        <div>
+                            <div>
+                                <label for="dates">Check In</label>
+                                <input type="text" id="dates" placeholder="07 Nov 25 - 13 Nov 25" />
+                            </div>
+                            <div>
+                                <label for="passengerClass">Check Out</label>
+                                <input type="text" id="passengerClass" placeholder="1 Passageiro, Econômica" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <input type="text" placeholder="Adicionar Código Promocional" />
+                        <button type="submit">Mostrar Reservas</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="recent-searchs">
+            <div class="top-text">
+                <div>
+                    <h2>Suas buscas recentes</h2>
+                    <p>Descubra lugares incríveis que você pesquisou recentemente.</p>
+                </div>
+            </div>
+            <div class="recent-cards">
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Istambul">
+                    <div class="card-info">
+                        <strong>Istambul, Turquia</strong>
+                        <p>325 lugares</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/1619854/pexels-photo-1619854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Sydney">
+                    <div class="card-info">
+                        <strong>Sydney, Austrália</strong>
+                        <p>325 lugares</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/8412701/pexels-photo-8412701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Baku">
+                    <div class="card-info">
+                        <strong>Baku, Azerbaijão</strong>
+                        <p>325 lugares</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.pexels.com/photos/1450338/pexels-photo-1450338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Malé">
+                    <div class="card-info">
+                        <strong>Malé, Maldivas</strong>
+                        <p>325 lugares</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="travel-deals">
+            <h2>Aproveite a Viagem</h2>
+            <p>Indo para algum lugar celebrar esta época? Seja para casa ou para algum lugar para explorar, temos as
+                ferramentas de viagem para te levar ao seu destino.</p>
+            <div class="deals-container">
+                <div class="deal-card">
+                    <img src="https://images.pexels.com/photos/2246478/pexels-photo-2246478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Melbourne: Uma jornada incrível">
+                    <div class="deal-info">
+                        <h3>Melbourne</h3>
+                        <p class="deal-description">Uma jornada incrível</p>
+                        <div class="price-book">
+                            <span class="price">R$ 699</span>
+                            <button class="book-button">Reservar Hotel</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <img src="https://images.pexels.com/photos/2130610/pexels-photo-2130610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Paris: Uma Aventura em Paris">
+                    <div class="deal-info">
+                        <h3>Paris</h3>
+                        <p class="deal-description">Uma Aventura em Paris</p>
+                        <div class="price-book">
+                            <span class="price">R$ 590</span>
+                            <button class="book-button">Reservar Hotel</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <img src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Londres: Aventura no London Eye">
+                    <div class="deal-info">
+                        <h3>Londres</h3>
+                        <p class="deal-description">Aventura no London Eye</p>
+                        <div class="price-book">
+                            <span class="price">R$ 539</span>
+                            <button class="book-button">Reservar Hotel</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <img src="https://images.pexels.com/photos/1510595/pexels-photo-1510595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Tokyo: Ruas incríveis">
+                    <div class="deal-info">
+                        <h3>Tokyo</h3>
+                        <p class="deal-description">Ruas incríveis</p>
+                        <div class="price-book">
+                            <span class="price">R$ 769</span>
+                            <button class="book-button">Reservar Hotel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="see-all-button">Ver Ofertas</button>
+        </section>
+        <section class="travel-section">
+            <div class="top-text">
+                <div>
+                    <h2>Viaje no outono</h2>
+                    <p>Está planejando viajar nessa estação? Seja para casa ou para algum lugar novo, temos as
+                        ferramentas certas para a sua viagem.</p>
+                </div>
+                <button class="see-all-button">Ver tudo</button>
+            </div>
+
+            <div class="travel-content">
+                <div class="left-box">
+                    <div class="price-tag">A partir de<br><strong>R$ 1700</strong></div>
+                    <h3>Mochilão no Sri Lanka</h3>
+                    <p>Viajar é uma experiência única, pois é a melhor forma de se desconectar das pressões do dia a dia.
+                        Permite esquecer problemas e ansiedades, enquanto exploramos novos lugares, culturas e tradições.
+                        Fazer um mochilão é uma aventura ainda mais intensa: viajamos de forma simples, com liberdade para decidir cada passo da jornada.
+                    </p>
+                    <p>O Sri Lanka, com suas paisagens exuberantes, templos antigos e praias paradisíacas, é um destino perfeito para mochileiros que buscam natureza, história e cultura.
+                        Durante a viagem, é possível conhecer vilarejos acolhedores, trilhas em meio a plantações de chá e monumentos impressionantes como Sigiriya.
+                        Cada momento no Sri Lanka é uma oportunidade de se reinventar, descobrir novos sabores, fazer amizades e viver experiências inesquecíveis.
+                        Seja para quem busca aventura ou para quem quer simplesmente relaxar, mochilar pelo Sri Lanka é uma escolha que transforma a vida.</p>
+                    <button class="btn-book">Embarcar agora</button>
+                </div>
+
+                <div class="gallery-images">
+                    <img src="https://images.pexels.com/photos/2403209/pexels-photo-2403209.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Sri Lanka 1">
+                    <img src="https://images.pexels.com/photos/1047051/pexels-photo-1047051.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Sri Lanka 2">
+                    <img src="https://images.pexels.com/photos/1998439/pexels-photo-1998439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Sri Lanka 3">
+                    <img src="https://images.pexels.com/photos/739409/pexels-photo-739409.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Sri Lanka 4">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-col logo-col">
+            <div class="logo">IMD Viagens</div>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+    
+          <div class="footer-col">
+            <h4>Nossos Destinos</h4>
+            <ul>
+              <li>Canada</li>
+              <li>Alaska</li>
+              <li>França</li>
+              <li>Iceland</li>
+            </ul>
+          </div>
+    
+          <div class="footer-col">
+            <h4>Nossas Atividades</h4>
+            <ul>
+              <li>Aurora Boreal</li>
+              <li>Cruzeiro & Navegação</li>
+              <li>Multi-atividades</li>
+              <li>Caiaque</li>
+            </ul>
+          </div>
+    
+          <div class="footer-col">
+            <h4>Blog de Viagens</h4>
+            <ul>
+              <li>Guia de viagem Bali</li>
+              <li>Guia de viagem Sri Lanka</li>
+              <li>Guia de viagem Peru</li>
+              <li>Guia de viagem Bali</li>
+            </ul>
+          </div>
+    
+          <div class="footer-col">
+            <h4>Sobre Nós</h4>
+            <ul>
+              <li>Nossa História</li>
+              <li>Trabalhe Conosco</li>
+            </ul>
+          </div>
+    
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul>
+              <li>Nossa História</li>
+              <li>Trabalhe Conosco</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+</body>
+
+</html>
