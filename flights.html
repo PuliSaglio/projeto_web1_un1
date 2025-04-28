@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/flights.css">
 </head>
+
 <body>
   <header>
     <div class="navbar">
@@ -24,5 +26,125 @@
       </div>
     </div>
   </header>
+  <main>
+    <section class="hero">
+      <div class="hero-image">
+        <div class="text">
+          <h1>Faça sua lista de desejos de viagem, <span>nós fazemos o resto.</span></h1>
+          <p>Ofertas especiais todos os dias!</p>
+        </div>
+      </div>
+      <div class="hero-search">
+        <form action="#">
+          <h2>Para onde você está voando?</h2>
+          <div class="row">
+            <div>
+              <label for="fromTo">Origem - Destino</label>
+              <input type="text" id="fromTo" placeholder="Natal - Tokyo" />
+            </div>
+            <div>
+              <label for="dates">Ida - Volta</label>
+              <input type="text" id="dates" placeholder="07 Nov 25 - 13 Nov 25" />
+            </div>
+            <div>
+              <label for="passengerClass">Passageiro - Classe</label>
+              <input type="text" id="passengerClass" placeholder="1 Passageiro, Econômica" />
+            </div>
+          </div>
+          <div class="actions">
+            <input type="text" placeholder="Adicionar Código Promocional" />
+            <button type="submit">Mostrar Voos</button>
+          </div>
+        </form>
+      </div>      
+    </section>
+    <section class="section-map">
+      <div class="top-text">
+        <div>
+          <h2>Vamos explorar o mundo juntos</h2>
+          <p>Descubra as últimas ofertas e comece a planejar sua próxima viagem conosco.</p>
+        </div>
+        <button class="btn-see-all">Ver tudo</button>
+      </div>
+      <div class="map">
+        <div class="point" style="top: 30%; left: 20%;">
+          <div class="card">
+            <img src="https://images.pexels.com/photos/31719319/pexels-photo-31719319.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Roma">
+            <div>João Silva<br><small>Cartão de Embarque Nº123</small></div>
+          </div>
+        </div>
+        <div class="point" style="top: 25%; left: 65%;">
+          <div class="card">
+            <img src="https://images.pexels.com/photos/2929906/pexels-photo-2929906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Machu Picchu">
+            <div>Maria Souza<br><small>Cartão de Embarque Nº123</small></div>
+          </div>
+        </div>
+        <div class="point" style="top: 55%; left: 45%;">
+          <div class="card">
+            <img src="https://images.pexels.com/photos/9229056/pexels-photo-9229056.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Cristo Redentor">
+            <div>Carlos Lima<br><small>Cartão de Embarque Nº123</small></div>
+          </div>
+        </div>
+        <div class="point" style="top: 60%; left: 70%;">
+          <div class="card">
+            <img src="https://images.pexels.com/photos/64271/queen-of-liberty-statue-of-liberty-new-york-liberty-statue-64271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Estátua da Liberdade">
+            <div>Ana Costa<br><small>Cartão de Embarque Nº123</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="travel-deals">
+      <h2>Aproveite a Viagem</h2>
+  <p>Indo para algum lugar celebrar esta época? Seja para casa ou para algum lugar para explorar, temos as ferramentas de viagem para te levar ao seu destino.</p>
+      <div class="deals-container">
+        <div class="deal-card">
+          <img src="https://images.pexels.com/photos/2246478/pexels-photo-2246478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Melbourne: Uma jornada incrível">
+          <div class="deal-info">
+            <h3>Melbourne</h3>
+            <p class="deal-description">Uma jornada incrível</p>
+            <div class="price-book">
+              <span class="price">R$ 9700</span>
+              <button class="book-button">Reservar Voo</button>
+            </div>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://images.pexels.com/photos/2130610/pexels-photo-2130610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Paris: Uma Aventura em Paris">
+          <div class="deal-info">
+            <h3>Paris</h3>
+            <p class="deal-description">Uma Aventura em Paris</p>
+            <div class="price-book">
+              <span class="price">R$ 6000</span>
+              <button class="book-button">Reservar Voo</button>
+            </div>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Londres: Aventura no London Eye">
+          <div class="deal-info">
+            <h3>Londres</h3>
+            <p class="deal-description">Aventura no London Eye</p>
+            <div class="price-book">
+              <span class="price">R$ 3500</span>
+              <button class="book-button">Reservar Voo</button>
+            </div>
+          </div>
+        </div>
+        <div class="deal-card">
+          <img src="https://images.pexels.com/photos/1510595/pexels-photo-1510595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Tokyo: Ruas incríveis">
+          <div class="deal-info">
+            <h3>Tokyo</h3>
+            <p class="deal-description">Ruas incríveis</p>
+            <div class="price-book">
+              <span class="price">R$ 9500</span>
+              <button class="book-button">Reservar Voo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="see-all-button">Ver Ofertas</button>
+    </section>
+  </main>
 </body>
+
 </html>
