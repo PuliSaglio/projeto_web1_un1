@@ -31,7 +31,7 @@
       <button class="see-all">Veja mais reviews!</button>
     </div>
 
-    <div class="reviews-container">
+    <div class="reviews-container" id="reviews-container">
       <!-- Card 1 -->
       <div class="review-card">
         <h2>“Uma viagem que superou expectativas”</h2>
@@ -79,7 +79,7 @@
       <p>Adoraríamos saber como foi a sua viagem com a IMD viagens!</p>
     </div>
   
-    <form class="feedback-form">
+    <form class="feedback-form" id="feedback-form">
       <div class="form-group">
         <label for="name">Seu nome</label>
         <input type="text" id="name" name="name" placeholder="Ex: Ana Silva" required />
@@ -89,10 +89,26 @@
         <label for="destination">Destino da sua viagem</label>
         <input type="text" id="destination" name="destination" placeholder="Ex: Lisboa, Portugal" required />
       </div>
+
+      <div class="form-group">
+        <label for="titulo">Título do comentário</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Dê um título à sua experiência incrível!" required />
+      </div>
   
       <div class="form-group">
         <label for="review">Seu comentário</label>
         <textarea id="review" name="review" rows="5" placeholder="Conte um pouco sobre como foi sua experiência..." required></textarea>
+      </div>
+
+      <div class="form-group form-stars">
+        <label for="star-rating">Avalie nosso atendimento!</label>
+        <div class="star-rating" id="star-rating">
+          <input type="radio" id="estrela5" name="rating" value="5"><label for="estrela5">★</label>
+          <input type="radio" id="estrela4" name="rating" value="4"><label for="estrela4">★</label>
+          <input type="radio" id="estrela3" name="rating" value="3"><label for="estrela3">★</label>
+          <input type="radio" id="estrela2" name="rating" value="2"><label for="estrela2">★</label>
+          <input type="radio" id="estrela1" name="rating" value="1"><label for="estrela1">★</label>
+        </div>
       </div>
   
       <button type="submit">Enviar comentário</button>
@@ -159,5 +175,6 @@
       </div>
     </div>
   </footer>
+  <script src="/assets/js/reviews.js"></script>
 </body>
 </html>

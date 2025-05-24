@@ -66,7 +66,7 @@ body {
   }
 
   .reviews-section {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 40px 20px;
   }
@@ -235,7 +235,7 @@ body {
   }
   
   .feedback-form button {
-    align-self: flex-start;
+    align-self: flex-end;
     background-color: #00bfa6;
     color: white;
     border: none;
@@ -250,6 +250,31 @@ body {
     background-color: #009e8c;
   }
   
+  .form-stars{
+    text-align: end;
+  }
+
+  .star-rating {
+    direction: rtl;
+    font-size: 2rem;
+    display: inline-flex;
+  }
+
+  .star-rating input {
+    display: none;
+  }
+
+  .star-rating label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .star-rating input:checked ~ label,
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color: gold;
+  }
 
   .footer {
     background-color: #97d8be;
@@ -327,6 +352,28 @@ body {
     gap: 30px;
     text-align: center;
   }
+
+  .star-rating {
+    direction: rtl;
+    font-size: 2rem;
+    display: inline-flex;
+  }
+
+  .star-rating input {
+    display: none;
+  }
+
+  .star-rating label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .star-rating input:checked ~ label,
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color: gold;
+  }
 }
 
 @media (max-width: 480px) {
@@ -377,6 +424,29 @@ body {
   .reviews-header p {
     font-size: 0.95rem;
   }
+
+  .star-rating {
+    direction: rtl;
+    font-size: 2rem;
+    display: inline-flex;
+  }
+
+  .star-rating input {
+    display: none;
+  }
+
+  .star-rating label {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .star-rating input:checked ~ label,
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color: gold;
+  }
+
 
   .feedback-section {
     padding: 20px 8px;
