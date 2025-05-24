@@ -29,50 +29,45 @@
     <div class="row">
       <!-- Sidebar de Filtros -->
       <aside class="col-md-3 mb-4">
-  <div class="sidebar">
-    <h5 class="mb-3">Filtros de busca</h5>
+      <div class="sidebar">
+        <form action="" id="form-filtros">
+        <h5 class="mb-3">Filtros de busca</h5>
 
-    <!-- Filtro por Paradas -->
-    <div class="mb-4">
-      <label class="form-label">Paradas</label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="filtro-paradas" id="parada-direto" value="0" checked>
-        <label class="form-check-label" for="parada-direto">Direto</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="filtro-paradas" id="parada-1" value="1">
-        <label class="form-check-label" for="parada-1">1 parada</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="filtro-paradas" id="parada-2mais" value="2">
-        <label class="form-check-label" for="parada-2mais">2 ou mais paradas</label>
-      </div>
-    </div>
+        <!-- Filtro por Paradas -->
+        <div class="mb-4">
+          <label class="form-label">Paradas</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filtro-paradas" id="parada-direto" value="0" checked>
+            <label class="form-check-label" for="parada-direto">Direto</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filtro-paradas" id="parada-1" value="1">
+            <label class="form-check-label" for="parada-1">1 parada</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filtro-paradas" id="parada-2mais" value="2">
+            <label class="form-check-label" for="parada-2mais">2 ou mais paradas</label>
+          </div>
+        </div>
 
-    <!-- Filtro por Preço -->
-    <div class="mb-4">
-      <label class="form-label">Faixa de Preço (R$)</label>
-      <input type="number" class="form-control mb-2" id="preco-min" placeholder="Preço mínimo">
-      <input type="number" class="form-control" id="preco-max" placeholder="Preço máximo">
-    </div>
+        <!-- Filtro por Preço -->
+        <div class="mb-4">
+          <label class="form-label">Faixa de Preço (R$)</label>
+          <input type="number" class="form-control mb-2" id="preco-min" placeholder="Preço mínimo">
+          <input type="number" class="form-control" id="preco-max" placeholder="Preço máximo">
+        </div>
 
-    <!-- Filtro por Horário -->
-    <div class="mb-4">
-      <label class="form-label">Faixa de Horário (Ida)</label>
-      <input type="time" class="form-control mb-2" id="hora-min">
-      <input type="time" class="form-control" id="hora-max">
-    </div>
+        <!-- Ordenação -->
+        <div class="mb-4">
+          <label class="form-label">Ordenar por</label>
+          <select id="ordem" class="form-select">
+            <option value="precoAsc">Menor preço</option>
+            <option value="precoDesc">Maior preço</option>
+          </select>
+        </div>
+        <button id="aplicar-filtros" class="btn btn-primary w-100" type="submit">Aplicar Filtros</button>
+        </form>
 
-    <!-- Ordenação -->
-    <div class="mb-4">
-      <label class="form-label">Ordenar por</label>
-      <select id="ordem" class="form-select">
-        <option value="precoAsc">Menor preço</option>
-        <option value="precoDesc">Maior preço</option>
-      </select>
-    </div>
-
-    <button id="aplicar-filtros" class="btn btn-primary w-100">Aplicar Filtros</button>
   </div>
 </aside>
 

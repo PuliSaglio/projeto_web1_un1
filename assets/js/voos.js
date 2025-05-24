@@ -1,9 +1,53 @@
+const container = document.getElementById("voos-container");
+
 document.addEventListener("DOMContentLoaded", () => {
+  let dadosVoos = [];
+  
+
   fetch('./data/voos.json')
     .then(response => response.json())
     .then(data => {
-      renderizarVoos(data);
-    });
+      dadosVoos = data;
+      renderizarVoos(dadosVoos);
+  });
+
+  const formFiltros = document.getElementById('form-filtros');
+
+  formFiltros.addEventListener('submit', function(event){
+    event.preventDefault();
+    container.innerHTML = "";
+
+    const filtros = coletarDadosFormFiltros();
+
+    let voosFiltrados = dadosVoos;
+    
+
+    if (filtros.paradas !== "") {
+      voosFiltrados = filtrarVoosPorParadas(voosFiltrados, filtros.paradas);
+      console.log(voosFiltrados);
+    }
+
+    if (filtros.precoMin !== "") {
+      voosFiltrados = filtrarVoosPorPrecoMin(voosFiltrados, filtros.precoMin);
+      console.log(voosFiltrados);
+    }
+
+    if (filtros.precoMax !== "") {
+      voosFiltrados = filtrarVoosPorPrecoMax(voosFiltrados, filtros.precoMax);
+      console.log(voosFiltrados);
+    }
+
+    if (filtros.ordenacao == "precoAsc"){
+      ordenarVoosPorPrecoCrescente(voosFiltrados);
+    }
+    else if (filtros.ordenacao == "precoDesc"){
+      ordenarVoosPorPrecoDecrescente(voosFiltrados);
+    }
+
+    renderizarVoos(voosFiltrados);
+  });
+
+
 });
 
 
@@ -48,4 +92,43 @@ function renderizarVoos(listaDeVoos) {
     const card = criarCard(voo);
     container.appendChild(card);
   });
+}
+
+function coletarDadosFormFiltros(){
+  const paradas = document.querySelector('input[name="filtro-paradas"]:checked')?.value;
+  const precoMin = document.getElementById('preco-min').value;
+  const precoMax = document.getElementById('preco-max').value;
+  const ordenacao = document.getElementById('ordem').value;
+
+  return{
+    paradas,
+    precoMin,
+    precoMax,
+    ordenacao
+  }
+}
+
+function filtrarVoosPorParadas(listaDeVoos, paradas){
+  const listaFiltrada = listaDeVoos.filter(voo => parseInt(voo.paradas) == parseInt(paradas));
+  return listaFiltrada;
+}
+
+function filtrarVoosPorPrecoMin(listaDeVoos, precoMin){
+  const listaFiltrada = listaDeVoos.filter(voo => parseInt(voo.preco) >= parseInt(precoMin));
+  return listaFiltrada;
+}
+
+function filtrarVoosPorPrecoMax(listaDeVoos, precoMax){
+  const listaFiltrada = listaDeVoos.filter(voo => parseInt(voo.preco) <= parseInt(precoMax));
+  return listaFiltrada;
+}
+
+function ordenarVoosPorPrecoCrescente(listaDeVoos){
+  const listaOrdenada = listaDeVoos.sort((a,b) => a.preco - b.preco);
+  return listaOrdenada;
+}
+
+function ordenarVoosPorPrecoDecrescente(listaDeVoos){
+  const listaOrdenada = listaDeVoos.sort((a,b) => b.preco - a.preco);
+  return listaOrdenada;
 }
