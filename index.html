@@ -34,14 +34,19 @@
         <button class="tab active">✈️ Voos</button>
         <button class="tab">🛏️ Hospedagens</button>
       </div>
-      <form class="form">
-        <input type="text" placeholder="Origem - Destino" value="Lahore - Karachi" />
-        <select>
-          <option selected>Ida e Volta</option>
-          <option>Só Ida</option>
+      <form action="" id="form-opcao-viagem">
+
+      </form>
+      <form class="form" id="form">
+        <input type="text" placeholder="Origem" id="origem" required/>
+        <input type="text" placeholder="Destino" id="destino" required/>
+        <select id="opcao-viagem">
+          <option>Ida e Volta</option>
+          <option selected>Só Ida</option>
         </select>
-        <input type="text" placeholder="Partida - Retorno" value="07 Nov 22 - 13 Nov 22" />
-        <input type="text" placeholder="Passageiro - Classe" value="1 Passageiro, Econômica" />
+        <input type="date" id="data-viagem"/>
+        <input type="date" id="data-volta" style="display: none;"> 
+        <input type="number" placeholder="Numero de Passageiros" id="passageiros" required/>
         <div class="extras">
           <a href="#" class="promo">+ Add Código Promocional</a>
           <button type="submit" class="show-flights">🚀 Buscar Voos</button>
@@ -56,7 +61,7 @@
         <h2>Planeje sua viagem perfeita!</h2>
         <p>Pesquise voos e lugares para alugar em nossos destinos mais populares</p>
       </div>
-      <button class="see-more">Ver mais destinos</button>
+      <a href="reviews.html"><button class="see-more">Veja o que os viajantes dizem sobre nós!</button></a>
     </div>
   
     <div class="destination-grid">
@@ -211,5 +216,6 @@
     </div>
   </footer>
   
+  <script src="/assets/js/index.js"></script>
 </body>
 </html>
