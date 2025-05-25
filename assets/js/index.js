@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
+    localStorage.removeItem('filtrosViagem');
     const form = document.getElementById('form');
     const selectTipoViagem = document.getElementById('opcao-viagem');
     const dataVoltaViagem = document.getElementById('data-volta');
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
     form.addEventListener('submit', function(event){
         event.preventDefault();
         localStorage.removeItem('filtrosViagem');
-        
+
         const dadosForm = coletarDadosForm();
         console.log(dadosForm);
         validarForm(dadosForm.origem, dadosForm.destino, dadosForm.passageiros);

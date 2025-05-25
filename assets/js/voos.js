@@ -12,17 +12,25 @@ document.addEventListener("DOMContentLoaded", () => {
       let dadosVoos = data;
       console.log("Todos os voos:", dadosVoos);
 
-      dadosVoos = filtrarVoosPorOrigem(dadosVoos, filtros.origem);
-      console.log("Voos filtrados por origem:", dadosVoos);
-      dadosVoos = filtrarVoosPorDestino(dadosVoos, filtros.destino);
-      console.log("Voos filtrados por destino:", dadosVoos);
-      dadosVoos = filtrarVoosPorDataIda(dadosVoos, filtros.dataIda);
-      console.log("Voos filtrados por data ida:", dadosVoos);
-      dadosVoos = filtrarVoosPorDataVolta(dadosVoos, filtros.dataVolta);
-      console.log("Voos filtrados por data volta:", dadosVoos);
-
-      console.log("Voos filtrados:", dadosVoos);
-
+      if(Object.keys(filtros).length !== 0){
+        if(filtros.origem !== ""){
+          dadosVoos = filtrarVoosPorOrigem(dadosVoos, filtros.origem);
+          console.log("Voos filtrados por origem:", dadosVoos);
+        }
+        if(filtros.destino !== ""){
+          dadosVoos = filtrarVoosPorDestino(dadosVoos, filtros.destino);
+          console.log("Voos filtrados por destino:", dadosVoos);
+        }
+        if(filtros.dataIda !== ""){
+          dadosVoos = filtrarVoosPorDataIda(dadosVoos, filtros.dataIda);
+          console.log("Voos filtrados por data ida:", dadosVoos);
+        }
+        if(filtros.dataVolta !== ""){
+          dadosVoos = filtrarVoosPorDataVolta(dadosVoos, filtros.dataVolta);
+          console.log("Voos filtrados por data volta:", dadosVoos);
+        }
+        console.log("Voos filtrados:", dadosVoos);
+      }
       renderizarVoos(dadosVoos);
     })
     .catch(err => console.error("Erro ao carregar voos:", err));
