@@ -2,14 +2,13 @@ const container = document.getElementById("voos-container");
 
 document.addEventListener("DOMContentLoaded", () => {
   const filtros = JSON.parse(localStorage.getItem('filtrosViagem') || '{}');  
-  console.log(filtros);
   let dadosVoos = [];
   
 
   fetch('./data/voos.json')
     .then(response => response.json())
     .then(data => {
-      let dadosVoos = data;
+      dadosVoos = data;
       console.log("Todos os voos:", dadosVoos);
 
       if(Object.keys(filtros).length !== 0){
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderizarVoos(dadosVoos);
     })
     .catch(err => console.error("Erro ao carregar voos:", err));
-
+    console.log("dadosVoos",dadosVoos);
 
   const formFiltros = document.getElementById('form-filtros');
 
@@ -43,7 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
     container.innerHTML = "";
 
     const filtros = coletarDadosFormFiltros();
-
+    const erroPreco = validarPrecosForm(filtros.precoMin, filtros.precoMax);
+    if(erroPreco == 1){
+      return;
+    }
+    
     let voosFiltrados = dadosVoos;
     
 
@@ -54,12 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (filtros.precoMin !== "") {
       voosFiltrados = filtrarVoosPorPrecoMin(voosFiltrados, filtros.precoMin);
-      console.log(voosFiltrados);
     }
 
     if (filtros.precoMax !== "") {
       voosFiltrados = filtrarVoosPorPrecoMax(voosFiltrados, filtros.precoMax);
-      console.log(voosFiltrados);
     }
 
     if (filtros.ordenacao == "precoAsc"){
@@ -68,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     else if (filtros.ordenacao == "precoDesc"){
       ordenarVoosPorPrecoDecrescente(voosFiltrados);
     }
-
     renderizarVoos(voosFiltrados);
   });
 
@@ -131,6 +131,22 @@ function coletarDadosFormFiltros(){
     precoMax,
     ordenacao
   }
+}
+
+function validarPrecosForm(precoMin, precoMax){
+  if(precoMin !== "" && precoMax !== ""){
+    if(precoMin>precoMax){
+      alert("O preço minimo tem que ser menor que o preço máximo");
+      return 1;
+    }
+  }else if(precoMin !== ""){
+    if(precoMin<=0){
+      alert("O preço minimo tem que ser maior que zero");
+      return 1;
+    }
+  }
+
+
 }
 
 function filtrarVoosPorParadas(listaDeVoos, paradas){

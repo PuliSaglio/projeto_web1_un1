@@ -34,27 +34,22 @@
         </div>
       </div>
       <div class="hero-search">
-        <form action="#">
+        <form class="form" id="form">
           <h2>Para onde você está voando?</h2>
-          <div class="row">
-            <div>
-              <label for="fromTo">Origem - Destino</label>
-              <input type="text" id="fromTo" placeholder="Natal - Tokyo" />
-            </div>
-            <div>
-              <label for="dates">Ida - Volta</label>
-              <input type="text" id="dates" placeholder="07 Nov 25 - 13 Nov 25" />
-            </div>
-            <div>
-              <label for="passengerClass">Passageiro - Classe</label>
-              <input type="text" id="passengerClass" placeholder="1 Passageiro, Econômica" />
-            </div>
-          </div>
-          <div class="actions">
-            <input type="text" placeholder="Adicionar Código Promocional" />
-            <button type="submit">Mostrar Voos</button>
-          </div>
-        </form>
+        <input type="text" placeholder="Origem" id="origem" required/>
+        <input type="text" placeholder="Destino" id="destino" required/>
+        <select id="opcao-viagem">
+          <option>Ida e Volta</option>
+          <option selected>Só Ida</option>
+        </select>
+        <input type="date" id="data-viagem"/>
+        <input type="date" id="data-volta" style="display: none;"> 
+        <input type="number" placeholder="Numero de Passageiros" id="passageiros" required/>
+        <div class="extras">
+          <a href="#" class="promo">+ Add Código Promocional</a>
+          <button type="submit" class="show-flights">🚀 Buscar Voos</button>
+        </div>
+      </form>
       </div>
     </section>
     <section class="section-map">
@@ -220,6 +215,7 @@
       </div>
     </div>
   </footer>
+  <script src="/assets/js/flights.js"></script>
 </body>
 
 </html>
