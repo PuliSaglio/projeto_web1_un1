@@ -1,15 +1,32 @@
 const container = document.getElementById("voos-container");
 
 document.addEventListener("DOMContentLoaded", () => {
+  const filtros = JSON.parse(localStorage.getItem('filtrosViagem') || '{}');  
+  console.log(filtros);
   let dadosVoos = [];
   
 
   fetch('./data/voos.json')
     .then(response => response.json())
     .then(data => {
-      dadosVoos = data;
+      let dadosVoos = data;
+      console.log("Todos os voos:", dadosVoos);
+
+      dadosVoos = filtrarVoosPorOrigem(dadosVoos, filtros.origem);
+      console.log("Voos filtrados por origem:", dadosVoos);
+      dadosVoos = filtrarVoosPorDestino(dadosVoos, filtros.destino);
+      console.log("Voos filtrados por destino:", dadosVoos);
+      dadosVoos = filtrarVoosPorDataIda(dadosVoos, filtros.dataIda);
+      console.log("Voos filtrados por data ida:", dadosVoos);
+      dadosVoos = filtrarVoosPorDataVolta(dadosVoos, filtros.dataVolta);
+      console.log("Voos filtrados por data volta:", dadosVoos);
+
+      console.log("Voos filtrados:", dadosVoos);
+
       renderizarVoos(dadosVoos);
-  });
+    })
+    .catch(err => console.error("Erro ao carregar voos:", err));
+
 
   const formFiltros = document.getElementById('form-filtros');
 
@@ -131,4 +148,20 @@ function ordenarVoosPorPrecoCrescente(listaDeVoos){
 function ordenarVoosPorPrecoDecrescente(listaDeVoos){
   const listaOrdenada = listaDeVoos.sort((a,b) => b.preco - a.preco);
   return listaOrdenada;
+}
+
+function filtrarVoosPorOrigem(listaDeVoos, origem){
+  return listaDeVoos.filter(voo => voo.origem.toLowerCase().includes(origem.toLowerCase()));
+}
+
+function filtrarVoosPorDestino(listaDeVoos, destino){
+  return listaDeVoos.filter(voo => voo.destino.toLowerCase().includes(destino.toLowerCase()));
+}
+
+function filtrarVoosPorDataIda(listaDeVoos, dataIda){
+  return listaDeVoos.filter(voo => voo.dataIda == dataIda);
+}
+
+function filtrarVoosPorDataVolta(listaDeVoos, dataVolta){
+  return listaDeVoos.filter(voo => voo.dataVolta == dataVolta);
 }
