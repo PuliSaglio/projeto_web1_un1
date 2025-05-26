@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", carregarCarrinho);
-document.addEventListener("DOMContentLoaded", () => {
-  const usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
-  if (usuario) {
-    document.getElementById("user-nome").textContent = `Olá, ${usuario.nome.split(" ")[0]}`;
-  }
-});
+
 function getUsuarioLogado() {
     return JSON.parse(sessionStorage.getItem('usuarioLogado'));
 }

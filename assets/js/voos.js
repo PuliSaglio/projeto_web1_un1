@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function criarCard(voo) {
+function criarCard(voo, index) {
   const card = document.createElement("div");
   card.className = "card mb-4 shadow-sm";
 
@@ -96,10 +96,15 @@ function criarCard(voo) {
       </p>
       <div class="d-flex justify-content-between align-items-center">
         <span class="fs-5 fw-bold text-success">R$ ${voo.preco.toFixed(2)}</span>
-        <a href="#" class="btn btn-primary">Selecionar</a>
+        <a href="#" class="btn btn-primary" data-index="${index}">Selecionar</a>
       </div>
     </div>
   `;
+
+  card.querySelector("a").addEventListener("click", () => {
+    adicionarAoCarrinho(voo);
+    window.location.href = "conta.html";
+  });
 
   return card;
 }
@@ -113,8 +118,8 @@ function renderizarVoos(listaDeVoos) {
     return;
   }
 
-  listaDeVoos.forEach(voo => {
-    const card = criarCard(voo);
+  listaDeVoos.forEach((voo, index) => {
+    const card = criarCard(voo, index);
     container.appendChild(card);
   });
 }
@@ -188,4 +193,20 @@ function filtrarVoosPorDataIda(listaDeVoos, dataIda){
 
 function filtrarVoosPorDataVolta(listaDeVoos, dataVolta){
   return listaDeVoos.filter(voo => voo.dataVolta == dataVolta);
+}
+
+function adicionarAoCarrinho(voo) {
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
+  if (!usuario) {
+    alert("Você precisa estar logado para adicionar ao carrinho.");
+    return;
+  }
+
+  const chaveCarrinho = `carrinho_${usuario.email}`;
+  const carrinhoAtual = JSON.parse(localStorage.getItem(chaveCarrinho)) || [];
+
+  carrinhoAtual.push(voo);
+
+  localStorage.setItem(chaveCarrinho, JSON.stringify(carrinhoAtual));
+  alert("Voo adicionado ao carrinho com sucesso!");
 }
