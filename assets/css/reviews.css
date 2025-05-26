@@ -5,65 +5,55 @@ body {
     padding: 0;
   }
   
-  .topbar {
+  /* NAVBAR */
+.navbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    flex-wrap: wrap;
-    position: relative;
-    background-color: white;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .topbar a {
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.35);
-  }
-  
+    background-color: #fff;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+}
 
-  .nav-left, .nav-right {
-    display: flex;
-    gap: 20px;
-  }
-  
-  
-  .nav-item {
+.navbar a {
     text-decoration: none;
     color: black;
-    font-weight: 500;
+}
+
+.navbar .left {
     display: flex;
     align-items: center;
-    gap: 5px;
-  }
+}
 
-  .nav-left a:hover , .nav-right a:hover{
-    transform: scale(1.1);
-  }
-  
-  .topbar .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+.navbar .left>* {
+    margin-left: 20px;
+}
+
+.navbar .left .active {
+    padding: 17px 0;
+    border-bottom: 3px solid #00e1b4;
+}
+
+.navbar .logo a {
     color: #00e1b4;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .login, .signup {
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 10px;
-    font-weight: 500;
-  }
-  
-  .login {
-    color: black;
-  }
-  
-  .signup {
+}
+
+.navbar .right {
+    display: flex;
+    align-items: center;
+
+}
+
+.navbar .right>* {
+    margin-left: 20px;
+}
+
+.navbar .right .signup {
     background-color: black;
     color: white;
-  }
+    padding: 8px 16px;
+    border-radius: 4px;
+}
 
   .reviews-section {
     max-width: 1400px;
@@ -144,13 +134,6 @@ body {
     color: #666;
     font-size: 0.9rem;
     margin: 10px 0;
-  }
-  
-  a {
-    font-weight: bold;
-    text-decoration: none;
-    color: #000;
-    margin-bottom: 10px;
   }
   
   .stars {
@@ -321,22 +304,6 @@ body {
   }
   
 @media (max-width: 768px) {
-  .topbar .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #00e1b4;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .nav-left,
-  .nav-right {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
   .reviews-container {
     flex-direction: column;
     align-items: center;
@@ -377,32 +344,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  .topbar {
-    padding: 15px;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .topbar .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #00e1b4;
-    position: static;
-    transform: translateX(0);
-    margin: 8px 0px;
-  }
-
-  .topbar a{
-    margin-bottom: 0;
-  }
-
-  .nav-left,
-  .nav-right {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
   .review-card {
     max-width: 90%;
     padding: 14px;
