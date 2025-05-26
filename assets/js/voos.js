@@ -92,7 +92,7 @@ function criarCard(voo) {
         <strong>Volta:</strong> ${voo.dataVolta} às ${voo.horaChegada} <br>
         <strong>Duração:</strong> ${voo.duracao} <br>
         <strong>Paradas:</strong> ${voo.paradas === 0 ? "Direto" : voo.paradas === 1 ? "1 parada" : `${voo.paradas} paradas`} <br>
-        <strong>Passageiros:</strong> ${voo.numeroPassageiros}
+        <strong>Assentos Disponiveis:</strong> ${voo.assentosDisponiveis}
       </p>
       <div class="d-flex justify-content-between align-items-center">
         <span class="fs-5 fw-bold text-success">R$ ${voo.preco.toFixed(2)}</span>
