@@ -20,7 +20,7 @@ function coletarDadosFormLogin(){
 
 function validarFormLogin(dadosLogin){
     if(!dadosLogin.email || !dadosLogin.senha){
-        alert("Por favo preencha todos os campos");
+        alert("Por favor preencha todos os campos");
         return 1;
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
