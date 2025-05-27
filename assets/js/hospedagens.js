@@ -130,4 +130,8 @@ function filtrarHospedagensPorCapacidade(hospedagens, numeroHospedes) {
 function verDetalhes(hospedagem) {
   sessionStorage.setItem("hospedagemSelecionada", JSON.stringify(hospedagem));
   window.location.href = "detalhes-hospedagem.html";
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> expedito

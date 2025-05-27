@@ -35,19 +35,19 @@ function validarFormCadastro(dadosCadastro){
 }
 
 function coletarDadosFormCadastro(){
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const telefone = document.getElementById('telefone').value.trim();
-    const senha = document.getElementById('senha').value.trim();
-    const termos = document.querySelector('#termos input[type="checkbox"]').checked;
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const telefone = document.getElementById('telefone').value.trim();
+  const senha = document.getElementById('senha').value.trim();
+  const termos = document.getElementById('termos').checked;
 
-    return{
-        nome,
-        email,
-        telefone,
-        senha,
-        termos
-    }
+  return{
+      nome,
+      email,
+      telefone,
+      senha,
+      termos
+  }
 }
 
 function registrarUsuario(email, senha, nome) {
