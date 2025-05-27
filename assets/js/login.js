@@ -20,7 +20,7 @@ function coletarDadosFormLogin(){
 
 function validarFormLogin(dadosLogin){
     if(!dadosLogin.email || !dadosLogin.senha){
-        alert("Por favo preencha todos os campos");
+        alert("Por favor preencha todos os campos");
         return 1;
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,7 +36,6 @@ function login(email, senha) {
 
   if (usuario) {
     sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-    alert("Login realizado!");
     window.location.href = "conta.html";
   } else {
     alert("Email ou senha inválidos.");

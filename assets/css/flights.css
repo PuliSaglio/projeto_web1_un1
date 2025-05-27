@@ -10,7 +10,6 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #f4f4f4;
     overflow-x: hidden;
-
 }
 
 /* NAVBAR */
@@ -479,6 +478,16 @@ body {
 
 .footer .o-logo {
     font-family: monospace;
+}
+
+.footer a {
+    color: #005342;
+    text-decoration: none;
+}
+
+.footer .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .footer .social-icons a {

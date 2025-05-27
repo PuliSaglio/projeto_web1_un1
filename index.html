@@ -2,214 +2,245 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IMD - Agência de Viagens</title>
-  <link rel="stylesheet" href="assets/css/index.css" />
+
+  <!-- Fonts and Bootstrap -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
+
 <body>
-
-  <div class="hero">
-    <header id="navbar-container">
-    <!-- Navbar será inserida aqui dinamicamente -->
-  </header>
-
-    <div class="hero-content">
-      <h2>Ajudando Pessoas</h2>
-      <h1>VIVER & VIAJAR</h1>
-      <p>Ofertas especiais que se adequam ao seu plano</p>
+  <!-- Hero -->
+  <div class="hero d-flex flex-column justify-content-center text-center text-light">
+    <div class="hero-content flex-grow-1 d-flex flex-column justify-content-center align-items-center">
+      <h2 class="mb-2">Ajudando Pessoas</h2>
+      <h1 class="mb-3">VIVER & VIAJAR</h1>
+      <p class="lead">Ofertas especiais que se adequam ao seu plano</p>
     </div>
 
-    <div class="search-box">
-      <div class="tabs">
-        <button class="tab active">✈️ Voos</button>
-        <button class="tab">🛏️ Hospedagens</button>
+     <!-- Botões no canto superior direito -->
+    <div id="auth-buttons" class="position-absolute top-0 end-0 p-3 z-3">
+      <a href="cadastro.html" class="btn btn-outline-light me-2">Cadastro</a>
+      <a href="login.html" class="btn btn-outline-light">Login</a>
+    </div>
+  
+    <!-- Seta fixa no fundo -->
+    <a href="#search-box" class="position-absolute bottom-0 z-3 text-center text-white mb-4">
+      <i class="bi bi-chevron-down fs-1 animate-bounce"></i>
+    </a>
+  </div>
+  
+  <!-- Caixa de Pesquisa -->
+  <div id="search-box" class="container search-box shadow-lg mt-5">
+    <div class="tabs mb-3">
+      <button class="btn btn-outline-primary active">✈️ Voos</button>
+      <button class="btn btn-outline-secondary">🛏️ Hospedagens</button>
+    </div>
+    <form class="row g-3">
+      <div class="col-md-6 col-lg-4">
+        <input type="text" class="form-control" placeholder="Origem" required>
       </div>
-    
-      <form class="form" id="form">
-        <input type="text" placeholder="Origem" id="origem" required/>
-        <input type="text" placeholder="Destino" id="destino" required/>
-        <select id="opcao-viagem">
+      <div class="col-md-6 col-lg-4">
+        <input type="text" class="form-control" placeholder="Destino" required>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <select class="form-select">
           <option>Ida e Volta</option>
           <option selected>Só Ida</option>
         </select>
-        <input type="date" id="data-viagem"/>
-        <input type="date" id="data-volta" style="display: none;"> 
-        <input type="number" placeholder="Numero de Passageiros" id="passageiros" required/>
-        <div class="extras">
-          <a href="#" class="promo">+ Add Código Promocional</a>
-          <button type="submit" class="show-flights">🚀 Buscar Voos</button>
-        </div>
-      </form>
-    </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <input type="date" class="form-control">
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <input type="date" class="form-control">
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <input type="number" class="form-control" placeholder="Passageiros" required>
+      </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-center">
+        <button type="submit" class="btn btn-success w-100">🚀 Buscar Voos</button>
+      </div>
+    </form>
   </div>
 
-  <section class="destinations">
-    <div class="destinations-header">
-      <div>
-        <h2>Planeje sua viagem perfeita!</h2>
-        <p>Pesquise voos e lugares para alugar em nossos destinos mais populares</p>
-      </div>
-      <a href="reviews.html"><button class="see-more">Veja o que os viajantes dizem sobre nós!</button></a>
-    </div>
-  
-    <div class="destination-grid">
-      <div class="card-destinos">
-        <img src="/assets/images/istambul.jpg" alt="Istanbul">
+  <!-- Destinos -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h3>Istanbul, Turkey</h3>
-          <p>Voos ・ Hotéis ・ Resorts</p>
+          <h2>Planeje sua viagem perfeita!</h2>
+          <p class="text-muted">Pesquise voos e lugares para alugar em nossos destinos mais populares</p>
         </div>
+        <a href="reviews.html" class="btn btn-outline-dark">Veja o que os viajantes dizem sobre nós!</a>
       </div>
-      <div class="card-destinos">
-        <img src="/assets/images/sydney.jpg" alt="Sydney">
-        <div>
-          <h3>Sydney, Australia</h3>
-          <p>Voos ・ Hotéis ・ Resorts</p>
+      <div class="row g-4 destination-grid">
+        <!-- Sydney -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 rounded">
+            <img src="/assets/images/sydney.jpg" class="card-img-top rounded" alt="Sydney">
+            <div class="card-body">
+              <h5 class="card-title">Sydney, Australia</h5>
+              <p class="card-text">Voos ・ Hotéis ・ Resorts</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-destinos">
-        <img src="/assets/images/baku.jpg" alt="Baku">
-        <div>
-          <h3>Baku, Azerbaijan</h3>
-          <p>Voos ・ Hotéis ・ Resorts</p>
+
+        <!-- Baku -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 rounded">
+            <img src="/assets/images/baku.jpg" class="card-img-top rounded" alt="Baku">
+            <div class="card-body">
+              <h5 class="card-title">Baku, Azerbaijan</h5>
+              <p class="card-text">Voos ・ Hotéis ・ Resorts</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-destinos">
-        <img src="/assets/images/Malé.jpg" alt="Malé">
-        <div>
-          <h3>Malé, Maldives</h3>
-          <p>Voos ・ Hotéis ・ Resorts</p>
+
+        <!-- Malé -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 rounded">
+            <img src="/assets/images/Malé.jpg" class="card-img-top rounded" alt="Malé">
+            <div class="card-body">
+              <h5 class="card-title">Malé, Maldives</h5>
+              <p class="card-text">Voos ・ Hotéis ・ Resorts</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-destinos">
-        <img src="/assets/images/Paris.jpg" alt="Paris">
-        <div>
-          <h3>Paris, France</h3>
-          <p>Voos ・ Hotéis ・ Resorts</p>
+
+        <!-- Paris -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 rounded">
+            <img src="/assets/images/Paris.jpg" class="card-img-top rounded" alt="Paris">
+            <div class="card-body">
+              <h5 class="card-title">Paris, France</h5>
+              <p class="card-text">Voos ・ Hotéis ・ Resorts</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-destinos">
-        <img src="/assets/images/NewYork.jpg" alt="New York">
-        <div>
-          <h3>New York, US</h3>
-          <p>Voos ・ Hotéis ・ Resorts</p>
+
+        <!-- New York -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 rounded">
+            <img src="/assets/images/NewYork.jpg" class="card-img-top rounded" alt="New York">
+            <div class="card-body">
+              <h5 class="card-title">New York, US</h5>
+              <p class="card-text">Voos ・ Hotéis ・ Resorts</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-destinos">
-        <img src="/assets/images/London.jpg" alt="London">
-        <div>
-          <h3>London, UK</h3>
-          <p>Voos ・ Hotéis ・ Resorts</p>
+
+        <!-- London -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 rounded">
+            <img src="/assets/images/London.jpg" class="card-img-top rounded" alt="London">
+            <div class="card-body">
+              <h5 class="card-title">London, UK</h5>
+              <p class="card-text">Voos ・ Hotéis ・ Resorts</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-destinos">
-        <img src="/assets/images/Tokyo.jpg" alt="Tokyo">
-        <div>
-          <h3>Tokyo, Japan</h3>
-          <p>Voos ・ Hotéis ・ Resorts</p>
+
+        <!-- Tokyo -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 rounded">
+            <img src="/assets/images/Tokyo.jpg" class="card-img-top rounded" alt="Tokyo">
+            <div class="card-body">
+              <h5 class="card-title">Tokyo, Japan</h5>
+              <p class="card-text">Voos ・ Hotéis ・ Resorts</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-destinos">
-        <img src="/assets/images/Dubai.jpg" alt="Dubai">
-        <div>
-          <h3>Dubai, UAE</h3>
-          <p>Voos ・ Hotéis ・ Resorts</p>
+
+        <!-- Dubai -->
+        <div class="col-md-4 col-lg-3">
+          <div class="card h-100 rounded">
+            <img src="/assets/images/Dubai.jpg" class="card-img-top rounded" alt="Dubai">
+            <div class="card-body">
+              <h5 class="card-title">Dubai, UAE</h5>
+              <p class="card-text">Voos ・ Hotéis ・ Resorts</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="travel-cards-section">
-    <div class="travel-card">
-      <img src="/assets/images/mulher-no-aeroporto.jpg" alt="Flights">
-      <div class="travel-overlay">
-        <h2>Voos</h2>
-        <p>Pesquise voos e lugares para alugar em nossos destinos mais populares</p>
-        <a href="flights.html" class="travel-card-btn" onclick="">
-          ✈️ Mostrar Voos
-        </a>
+  <!-- Cartões de Viagem -->
+  <section class="container travel-cards-section py-5">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card overflow-hidden">
+          <img src="/assets/images/mulher-no-aeroporto.jpg" alt="Flights" class="card-img">
+          <div class="card-img-overlay d-flex flex-column justify-content-end bg-dark bg-opacity-50">
+            <h2 class="text-white">Voos</h2>
+            <p class="text-white">Pesquise voos e lugares para alugar em nossos destinos mais populares</p>
+            <a href="flights.html" class="btn btn-outline-light w-100">Mostrar Voos</a>
+          </div>
+        </div>
       </div>
-    </div>
-  
-    <div class="travel-card">
-      <img src="/assets/images/Hotel.jpg" alt="Hotels">
-      <div class="travel-overlay">
-        <h2>Hotéis</h2>
-        <p>Pesquise hotéis e lugares para alugar em nossos destinos mais populares</p>
-        <a href="stays.html" class="travel-card-btn">
-          🏨 Mostrar Hotéis
-        </a>
+      <div class="col-md-6">
+        <div class="card overflow-hidden">
+          <img src="/assets/images/Hotel.jpg" alt="Hotels" class="card-img">
+          <div class="card-img-overlay d-flex flex-column justify-content-end bg-dark bg-opacity-50">
+            <h2 class="text-white">Hotéis</h2>
+            <p class="text-white">Pesquise hotéis e lugares para alugar em nossos destinos mais populares</p>
+            <a href="stays.html" class="btn btn-outline-light w-100">Mostrar Hotéis</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  
 
+  <!-- Rodapé -->
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-col logo-col">
-        <div class="logo">IMD Viagens</div>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <div class="logo">IMD Viagens</div>
+          <div class="mt-3">
+            <a href="#"><i class="fab fa-facebook me-3"></i></a>
+            <a href="#"><i class="fab fa-twitter me-3"></i></a>
+            <a href="#"><i class="fab fa-youtube me-3"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
-      </div>
-  
-      <div class="footer-col">
-        <h4>Nossos Destinos</h4>
-        <ul>
-          <li>Canada</li>
-          <li>Alaska</li>
-          <li>França</li>
-          <li>Iceland</li>
-        </ul>
-      </div>
-  
-      <div class="footer-col">
-        <h4>Nossas Atividades</h4>
-        <ul>
-          <li>Aurora Boreal</li>
-          <li>Cruzeiro & Navegação</li>
-          <li>Multi-atividades</li>
-          <li>Caiaque</li>
-        </ul>
-      </div>
-  
-      <div class="footer-col">
-        <h4>Blog de Viagens</h4>
-        <ul>
-          <li>Guia de viagem Bali</li>
-          <li>Guia de viagem Sri Lanka</li>
-          <li>Guia de viagem Peru</li>
-          <li>Guia de viagem Bali</li>
-        </ul>
-      </div>
-  
-      <div class="footer-col">
-        <h4>Sobre Nós</h4>
-        <ul>
+        <div class="col-md-2">
+          <h4>Destinos</h4>
+          <ul class="list-unstyled">
+            <li>Canada</li><li>Alaska</li><li>França</li><li>Iceland</li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>Atividades</h4>
+          <ul class="list-unstyled">
+            <li>Aurora Boreal</li><li>Cruzeiro</li><li>Multi-atividades</li><li>Caiaque</li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>Blog</h4>
+          <ul class="list-unstyled">
+            <li>Bali</li><li>Sri Lanka</li><li>Peru</li><li>Tailândia</li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>Sobre Nós</h4>
+          <ul class="list-unstyled">
             <li>Nossa História</li>
             <li>Trabalhe Conosco</li>
-        </ul>
-      </div>
-  
-      <div class="footer-col">
-        <h4>Contato</h4>
-        <ul>
-            <li>Nossa História</li>
-            <li>Trabalhe Conosco</li>
-        </ul>
+            <li>Contato</li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
-  
-  <script src="/assets/js/index.js"></script>
-    <script src="/assets/js/navbar.js"></script>
 
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/navbar.js"></script>
 </body>
 </html>

@@ -28,9 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
           dadosVoos = filtrarVoosPorDataVolta(dadosVoos, filtros.dataVolta);
           console.log("Voos filtrados por data volta:", dadosVoos);
         }
+        if(filtros.passageiros !== ""){
+          dadosVoos = filtrarVoosPorPassageiros(dadosVoos, filtros.passageiros);
+          console.log("Voos filtrados por passageiros:", dadosVoos);
+        }
         console.log("Voos filtrados:", dadosVoos);
       }
-      renderizarVoos(dadosVoos);
+      renderizarVoos(dadosVoos, filtros.passageiros);
     })
     .catch(err => console.error("Erro ao carregar voos:", err));
     console.log("dadosVoos",dadosVoos);
@@ -76,7 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function criarCard(voo, index) {
+function criarCard(voo, index, passageiros) {
+  let numPassageiros = parseInt(passageiros);
+
+  if (isNaN(numPassageiros) || numPassageiros < 1) {
+    numPassageiros = 1;
+  }
+  const precoTotal = voo.preco * numPassageiros;
+
   const card = document.createElement("div");
   card.className = "card mb-4 shadow-sm";
 
@@ -92,24 +103,25 @@ function criarCard(voo, index) {
         <strong>Volta:</strong> ${voo.dataVolta} às ${voo.horaChegada} <br>
         <strong>Duração:</strong> ${voo.duracao} <br>
         <strong>Paradas:</strong> ${voo.paradas === 0 ? "Direto" : voo.paradas === 1 ? "1 parada" : `${voo.paradas} paradas`} <br>
-        <strong>Assentos Disponiveis:</strong> ${voo.assentosDisponiveis}
+        <strong>Preço por passageiro:</strong> R$ ${voo.preco.toFixed(2)}<br>
+        <strong>Total (${numPassageiros}x):</strong> <span class="text-success fw-bold">R$ ${precoTotal.toFixed(2)}</span>
+      </p>
       </p>
       <div class="d-flex justify-content-between align-items-center">
-        <span class="fs-5 fw-bold text-success">R$ ${voo.preco.toFixed(2)}</span>
         <a href="#" class="btn btn-primary" data-index="${index}">Selecionar</a>
       </div>
     </div>
   `;
 
   card.querySelector("a").addEventListener("click", () => {
-    adicionarAoCarrinho(voo);
+    adicionarAoCarrinho(voo, passageiros);
     window.location.href = "conta.html";
   });
 
   return card;
 }
 
-function renderizarVoos(listaDeVoos) {
+function renderizarVoos(listaDeVoos,passageiros) {
   const container = document.getElementById("voos-container");
   container.innerHTML = "";
 
@@ -119,7 +131,7 @@ function renderizarVoos(listaDeVoos) {
   }
 
   listaDeVoos.forEach((voo, index) => {
-    const card = criarCard(voo, index);
+    const card = criarCard(voo, index, passageiros);
     container.appendChild(card);
   });
 }
@@ -195,17 +207,34 @@ function filtrarVoosPorDataVolta(listaDeVoos, dataVolta){
   return listaDeVoos.filter(voo => voo.dataVolta == dataVolta);
 }
 
-function adicionarAoCarrinho(voo) {
+function filtrarVoosPorPassageiros(listaDeVoos, passageiros){
+  return listaDeVoos.filter(voo => voo.assentosDisponiveis >= passageiros);
+}
+
+function adicionarAoCarrinho(voo, passageiros) {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
+  const numPassageiros = passageiros;
   if (!usuario) {
     alert("Você precisa estar logado para adicionar ao carrinho.");
+    return;
+  }
+
+
+  if (voo.assentosDisponiveis && numPassageiros > voo.assentosDisponiveis) {
+    alert("Não há assentos disponíveis suficientes para essa quantidade de passageiros.");
     return;
   }
 
   const chaveCarrinho = `carrinho_${usuario.email}`;
   const carrinhoAtual = JSON.parse(localStorage.getItem(chaveCarrinho)) || [];
 
-  carrinhoAtual.push(voo);
+  const itemCarrinho = {
+    ...voo,
+    quantidadePassageiros: numPassageiros,
+    precoTotal: voo.preco * numPassageiros
+  };
+
+  carrinhoAtual.push(itemCarrinho);
 
   localStorage.setItem(chaveCarrinho, JSON.stringify(carrinhoAtual));
   alert("Voo adicionado ao carrinho com sucesso!");
