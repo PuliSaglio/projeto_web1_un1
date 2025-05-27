@@ -36,7 +36,6 @@ function login(email, senha) {
 
   if (usuario) {
     sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-    alert("Login realizado!");
     window.location.href = "conta.html";
   } else {
     alert("Email ou senha inválidos.");
