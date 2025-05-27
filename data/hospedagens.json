@@ -1,0 +1,613 @@
+[
+    {
+      "id": 1,
+      "nome": "Hotel Praia Azul",
+      "localizacao": {
+        "cidade": "Natal",
+        "estado": "RN",
+        "pais": "Brasil"
+      },
+      "endereco": "Av. Beira Mar, 1234",
+      "precoPorNoite": 280.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 15,
+      "disponibilidade": {
+        "checkin": "2025-07-01",
+        "checkout": "2025-07-30"
+      },
+      "avaliacao": 4.5,
+      "quantidadeEstrelas": 4,
+      "comodidades": [
+        "Wi-Fi gratuito",
+        "Piscina",
+        "Café da manhã incluso",
+        "Ar-condicionado"
+      ],
+      "fotos": [
+        "https://example.com/imagens/hotel1.jpg",
+        "https://example.com/imagens/hotel1-2.jpg"
+      ],
+      "descricao": "A poucos passos da praia, com vista para o mar e excelente atendimento."
+    },
+    {
+      "id": 2,
+      "nome": "Mountain Resort",
+      "localizacao": {
+        "cidade": "Gramado",
+        "estado": "RS",
+        "pais": "Brasil"
+      },
+      "endereco": "Rua das Hortênsias, 500",
+      "precoPorNoite": 420.00,
+      "capacidadePorQuarto": 3,
+      "quartosDisponiveis": 8,
+      "disponibilidade": {
+        "checkin": "2025-06-15",
+        "checkout": "2025-08-20"
+      },
+      "avaliacao": 4.8,
+      "quantidadeEstrelas": 5,
+      "comodidades": [
+        "Wi-Fi gratuito",
+        "Spa",
+        "Restaurante gourmet",
+        "Lareira",
+        "Estacionamento gratuito"
+      ],
+      "fotos": [
+        "https://example.com/imagens/resort1.jpg",
+        "https://example.com/imagens/resort1-2.jpg"
+      ],
+      "descricao": "Encantador resort nas montanhas com vista deslumbrante e atmosfera acolhedora."
+    },
+    {
+      "id": 3,
+      "nome": "Ibis Styles Centro",
+      "localizacao": {
+        "cidade": "São Paulo",
+        "estado": "SP",
+        "pais": "Brasil"
+      },
+      "endereco": "Av. Paulista, 1000",
+      "precoPorNoite": 320.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 25,
+      "disponibilidade": {
+        "checkin": "2025-05-01",
+        "checkout": "2025-12-31"
+      },
+      "avaliacao": 4.2,
+      "quantidadeEstrelas": 3,
+      "comodidades": [
+        "Wi-Fi gratuito",
+        "Café da manhã",
+        "Business center",
+        "Ar-condicionado"
+      ],
+      "fotos": [
+        "https://example.com/imagens/ibis1.jpg",
+        "https://example.com/imagens/ibis1-2.jpg"
+      ],
+      "descricao": "Hotel econômico com ótima localização no coração financeiro de São Paulo."
+    },
+    {
+      "id": 4,
+      "nome": "Copacabana Palace",
+      "localizacao": {
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ",
+        "pais": "Brasil"
+      },
+      "endereco": "Av. Atlântica, 1702",
+      "precoPorNoite": 1200.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 5,
+      "disponibilidade": {
+        "checkin": "2025-09-01",
+        "checkout": "2025-09-30"
+      },
+      "avaliacao": 4.9,
+      "quantidadeEstrelas": 5,
+      "comodidades": [
+        "Wi-Fi gratuito",
+        "Piscina",
+        "Spa de luxo",
+        "Restaurante premiado",
+        "Serviço de concierge",
+        "Vista para o mar"
+      ],
+      "fotos": [
+        "https://example.com/imagens/copacabana1.jpg",
+        "https://example.com/imagens/copacabana1-2.jpg"
+      ],
+      "descricao": "O hotel mais icônico do Brasil, com serviço impecável e localização privilegiada."
+    },
+    {
+      "id": 5,
+      "nome": "Pousada do Sol",
+      "localizacao": {
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "pais": "Brasil"
+      },
+      "endereco": "Rua das Gaivotas, 45",
+      "precoPorNoite": 350.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 10,
+      "disponibilidade": {
+        "checkin": "2025-01-10",
+        "checkout": "2025-03-15"
+      },
+      "avaliacao": 4.6,
+      "quantidadeEstrelas": 3,
+      "comodidades": [
+        "Wi-Fi gratuito",
+        "Café da manhã colonial",
+        "Bicicletas para uso",
+        "Proximo à praia"
+      ],
+      "fotos": [
+        "https://example.com/imagens/pousada1.jpg",
+        "https://example.com/imagens/pousada1-2.jpg"
+      ],
+      "descricao": "Pousada charmosa a 200 metros da praia, com atendimento familiar e aconchegante."
+    },
+    {
+      "id": 6,
+      "nome": "Hotel Fazenda Paraíso",
+      "localizacao": {
+        "cidade": "Campos do Jordão",
+        "estado": "SP",
+        "pais": "Brasil"
+      },
+      "endereco": "Estrada da Serra, km 12",
+      "precoPorNoite": 520.00,
+      "capacidadePorQuarto": 4,
+      "quartosDisponiveis": 12,
+      "disponibilidade": {
+        "checkin": "2025-04-01",
+        "checkout": "2025-11-30"
+      },
+      "avaliacao": 4.7,
+      "quantidadeEstrelas": 4,
+      "comodidades": [
+        "Café da manhã rural",
+        "Cavalarias",
+        "Trilhas ecológicas",
+        "Lago para pesca",
+        "Churrasqueira coletiva"
+      ],
+      "fotos": [
+        "https://example.com/imagens/fazenda1.jpg",
+        "https://example.com/imagens/fazenda1-2.jpg"
+      ],
+      "descricao": "Experiência rural completa com contato com animais e natureza preservada."
+    },
+    {
+      "id": 7,
+      "nome": "Business Express Airport",
+      "localizacao": {
+        "cidade": "Guarulhos",
+        "estado": "SP",
+        "pais": "Brasil"
+      },
+      "endereco": "Av. Monteiro Lobato, 3000",
+      "precoPorNoite": 280.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 30,
+      "disponibilidade": {
+        "checkin": "2025-01-01",
+        "checkout": "2025-12-31"
+      },
+      "avaliacao": 4.0,
+      "quantidadeEstrelas": 3,
+      "comodidades": [
+        "Transfer gratuito para o aeroporto",
+        "Wi-Fi gratuito",
+        "Business center 24h",
+        "Estacionamento pago"
+      ],
+      "fotos": [
+        "https://example.com/imagens/business1.jpg",
+        "https://example.com/imagens/business1-2.jpg"
+      ],
+      "descricao": "Praticidade para quem tem voos cedo ou conexões no aeroporto de Guarulhos."
+    },
+    {
+      "id": 8,
+      "nome": "Pousada Maravilha",
+      "localizacao": {
+        "cidade": "Jericoacoara",
+        "estado": "CE",
+        "pais": "Brasil"
+      },
+      "endereco": "Rua Principal, S/N",
+      "precoPorNoite": 480.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 6,
+      "disponibilidade": {
+        "checkin": "2025-08-01",
+        "checkout": "2025-10-31"
+      },
+      "avaliacao": 4.9,
+      "quantidadeEstrelas": 4,
+      "comodidades": [
+        "Vista para o pôr do sol",
+        "Café da manhã regional",
+        "Próximo à Praia do Malhadao",
+        "Rede na varanda"
+      ],
+      "fotos": [
+        "https://example.com/imagens/jeri1.jpg",
+        "https://example.com/imagens/jeri1-2.jpg"
+      ],
+      "descricao": "Acomodações rústicas mas confortáveis no paraíso de Jericoacoara."
+    },
+    {
+      "id": 9,
+      "nome": "Hotel Histórico",
+      "localizacao": {
+        "cidade": "Ouro Preto",
+        "estado": "MG",
+        "pais": "Brasil"
+      },
+      "endereco": "Rua Direita, 123",
+      "precoPorNoite": 380.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 8,
+      "disponibilidade": {
+        "checkin": "2025-05-01",
+        "checkout": "2025-11-30"
+      },
+      "avaliacao": 4.5,
+      "quantidadeEstrelas": 3,
+      "comodidades": [
+        "Prédio histórico",
+        "Wi-Fi gratuito",
+        "Café colonial",
+        "Centro da cidade"
+      ],
+      "fotos": [
+        "https://example.com/imagens/ouropreto1.jpg",
+        "https://example.com/imagens/ouropreto1-2.jpg"
+      ],
+      "descricao": "Hospede-se em um autêntico casarão do século XVIII totalmente restaurado."
+    },
+    {
+      "id": 10,
+      "nome": "Resort All Inclusive",
+      "localizacao": {
+        "cidade": "Porto Seguro",
+        "estado": "BA",
+        "pais": "Brasil"
+      },
+      "endereco": "Av. Beira Mar, 1000",
+      "precoPorNoite": 850.00,
+      "capacidadePorQuarto": 3,
+      "quartosDisponiveis": 20,
+      "disponibilidade": {
+        "checkin": "2025-01-05",
+        "checkout": "2025-12-20"
+      },
+      "avaliacao": 4.7,
+      "quantidadeEstrelas": 5,
+      "comodidades": [
+        "All inclusive",
+        "4 restaurantes",
+        "3 piscinas",
+        "Animação infantil",
+        "Espaço kids",
+        "Atividades esportivas"
+      ],
+      "fotos": [
+        "https://example.com/imagens/resortba1.jpg",
+        "https://example.com/imagens/resortba1-2.jpg"
+      ],
+      "descricao": "Tudo incluso para suas férias em família na Bahia com diversão garantida."
+    },
+    {
+      "id": 11,
+      "nome": "Hostel Backpacker",
+      "localizacao": {
+        "cidade": "Salvador",
+        "estado": "BA",
+        "pais": "Brasil"
+      },
+      "endereco": "Rua do Pelourinho, 30",
+      "precoPorNoite": 90.00,
+      "capacidadePorQuarto": 6,
+      "quartosDisponiveis": 5,
+      "disponibilidade": {
+        "checkin": "2025-02-01",
+        "checkout": "2025-12-15"
+      },
+      "avaliacao": 4.3,
+      "quantidadeEstrelas": 2,
+      "comodidades": [
+        "Wi-Fi gratuito",
+        "Cozinha compartilhada",
+        "Tours gratuitos",
+        "Área comum com TV"
+      ],
+      "fotos": [
+        "https://example.com/imagens/hostel1.jpg",
+        "https://example.com/imagens/hostel1-2.jpg"
+      ],
+      "descricao": "Ótima opção para mochileiros no coração do Pelourinho."
+    },
+    {
+      "id": 12,
+      "nome": "Boutique Hotel Art",
+      "localizacao": {
+        "cidade": "Belo Horizonte",
+        "estado": "MG",
+        "pais": "Brasil"
+      },
+      "endereco": "Rua da Bahia, 1400",
+      "precoPorNoite": 420.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 10,
+      "disponibilidade": {
+        "checkin": "2025-03-15",
+        "checkout": "2025-11-30"
+      },
+      "avaliacao": 4.8,
+      "quantidadeEstrelas": 4,
+      "comodidades": [
+        "Decoração artística",
+        "Wi-Fi gratuito",
+        "Café da manhã orgânico",
+        "Biblioteca temática"
+      ],
+      "fotos": [
+        "https://example.com/imagens/boutique1.jpg",
+        "https://example.com/imagens/boutique1-2.jpg"
+      ],
+      "descricao": "Hotel temático com obras de artistas locais em cada ambiente."
+    },
+    {
+      "id": 13,
+      "nome": "Eco Lodge Amazônia",
+      "localizacao": {
+        "cidade": "Manaus",
+        "estado": "AM",
+        "pais": "Brasil"
+      },
+      "endereco": "Rio Negro, km 12",
+      "precoPorNoite": 550.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 8,
+      "disponibilidade": {
+        "checkin": "2025-06-01",
+        "checkout": "2025-11-30"
+      },
+      "avaliacao": 4.9,
+      "quantidadeEstrelas": 4,
+      "comodidades": [
+        "Acesso fluvial",
+        "Alimentação inclusa",
+        "Passeios ecológicos",
+        "Alojamento sustentável"
+      ],
+      "fotos": [
+        "https://example.com/imagens/amazonia1.jpg",
+        "https://example.com/imagens/amazonia1-2.jpg"
+      ],
+      "descricao": "Experiência única de imersão na floresta amazônica com conforto e consciência ecológica."
+    },
+    {
+      "id": 14,
+      "nome": "Flat Extended Stay",
+      "localizacao": {
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "Brasil"
+      },
+      "endereco": "Av. Sete de Setembro, 2500",
+      "precoPorNoite": 220.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 18,
+      "disponibilidade": {
+        "checkin": "2025-01-01",
+        "checkout": "2025-12-31"
+      },
+      "avaliacao": 4.1,
+      "quantidadeEstrelas": 3,
+      "comodidades": [
+        "Kitchenette",
+        "Wi-Fi gratuito",
+        "Lavanderia",
+        "Estacionamento gratuito",
+        "Área de trabalho"
+      ],
+      "fotos": [
+        "https://example.com/imagens/flat1.jpg",
+        "https://example.com/imagens/flat1-2.jpg"
+      ],
+      "descricao": "Ótima opção para estadias prolongadas com estrutura de apartamento."
+    },
+    {
+      "id": 15,
+      "nome": "Luxury Suites",
+      "localizacao": {
+        "cidade": "Angra dos Reis",
+        "estado": "RJ",
+        "pais": "Brasil"
+      },
+      "endereco": "Praia do Anil, 100",
+      "precoPorNoite": 980.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 6,
+      "disponibilidade": {
+        "checkin": "2025-01-10",
+        "checkout": "2025-04-30"
+      },
+      "avaliacao": 4.9,
+      "quantidadeEstrelas": 5,
+      "comodidades": [
+        "Vista para o mar",
+        "Piscina infinita",
+        "Spa",
+        "Restaurante gourmet",
+        "Bar na piscina"
+      ],
+      "fotos": [
+        "https://example.com/imagens/luxury1.jpg",
+        "https://example.com/imagens/luxury1-2.jpg"
+      ],
+      "descricao": "Suítes luxuosas com serviço de mordomo e privacidade garantida."
+    },
+    {
+      "id": 16,
+      "nome": "Hotel Fazenda Colina Verde",
+      "localizacao": {
+        "cidade": "Serra Negra",
+        "estado": "SP",
+        "pais": "Brasil"
+      },
+      "endereco": "Estrada Rural, km 5",
+      "precoPorNoite": 380.00,
+      "capacidadePorQuarto": 4,
+      "quartosDisponiveis": 12,
+      "disponibilidade": {
+        "checkin": "2025-01-15",
+        "checkout": "2025-12-10"
+      },
+      "avaliacao": 4.6,
+      "quantidadeEstrelas": 4,
+      "comodidades": [
+        "Café colonial",
+        "Trilhas",
+        "Cavalarias",
+        "Piscina natural",
+        "Churrasqueira"
+      ],
+      "fotos": [
+        "https://example.com/imagens/fazenda2.jpg",
+        "https://example.com/imagens/fazenda2-2.jpg"
+      ],
+      "descricao": "Contato com a natureza e ar puro na Serra da Mantiqueira."
+    },
+    {
+      "id": 17,
+      "nome": "Design Hotel",
+      "localizacao": {
+        "cidade": "Porto Alegre",
+        "estado": "RS",
+        "pais": "Brasil"
+      },
+      "endereco": "Rua da Praia, 800",
+      "precoPorNoite": 450.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 15,
+      "disponibilidade": {
+        "checkin": "2025-02-01",
+        "checkout": "2025-11-30"
+      },
+      "avaliacao": 4.7,
+      "quantidadeEstrelas": 4,
+      "comodidades": [
+        "Design contemporâneo",
+        "Wi-Fi gratuito",
+        "Restaurante conceito",
+        "Roof top bar"
+      ],
+      "fotos": [
+        "https://example.com/imagens/design1.jpg",
+        "https://example.com/imagens/design1-2.jpg"
+      ],
+      "descricao": "Para quem aprecia arquitetura e design em cada detalhe do ambiente."
+    },
+    {
+      "id": 18,
+      "nome": "Pousada dos Ventos",
+      "localizacao": {
+        "cidade": "Arraial do Cabo",
+        "estado": "RJ",
+        "pais": "Brasil"
+      },
+      "endereco": "Praia Grande, 300",
+      "precoPorNoite": 520.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 8,
+      "disponibilidade": {
+        "checkin": "2025-10-01",
+        "checkout": "2025-03-31"
+      },
+      "avaliacao": 4.8,
+      "quantidadeEstrelas": 4,
+      "comodidades": [
+        "Vista para o mar",
+        "Café da manhã reforçado",
+        "Proximo às melhores praias",
+        "Rede na varanda"
+      ],
+      "fotos": [
+        "https://example.com/imagens/arraial1.jpg",
+        "https://example.com/imagens/arraial1-2.jpg"
+      ],
+      "descricao": "A melhor localização para conhecer as praias paradisíacas de Arraial do Cabo."
+    },
+    {
+      "id": 19,
+      "nome": "Hotel Express Aeroporto",
+      "localizacao": {
+        "cidade": "Confins",
+        "estado": "MG",
+        "pais": "Brasil"
+      },
+      "endereco": "Av. do Contorno, 100",
+      "precoPorNoite": 240.00,
+      "capacidadePorQuarto": 2,
+      "quartosDisponiveis": 20,
+      "disponibilidade": {
+        "checkin": "2025-01-01",
+        "checkout": "2025-12-31"
+      },
+      "avaliacao": 3.9,
+      "quantidadeEstrelas": 3,
+      "comodidades": [
+        "Transfer gratuito",
+        "Wi-Fi gratuito",
+        "Restaurante 24h",
+        "Estacionamento pago"
+      ],
+      "fotos": [
+        "https://example.com/imagens/aero1.jpg",
+        "https://example.com/imagens/aero1-2.jpg"
+      ],
+      "descricao": "Praticidade para passageiros com voos no aeroporto de Confins."
+    },
+    {
+      "id": 20,
+      "nome": "Resort Familiar",
+      "localizacao": {
+        "cidade": "Maceió",
+        "estado": "AL",
+        "pais": "Brasil"
+      },
+      "endereco": "Av. da Paz, 2000",
+      "precoPorNoite": 680.00,
+      "capacidadePorQuarto": 4,
+      "quartosDisponiveis": 25,
+      "disponibilidade": {
+        "checkin": "2025-01-05",
+        "checkout": "2025-12-20"
+      },
+      "avaliacao": 4.7,
+      "quantidadeEstrelas": 5,
+      "comodidades": [
+        "All inclusive",
+        "3 piscinas",
+        "Espaço kids",
+        "Atividades diárias",
+        "Animação infantil",
+        "Praia privativa"
+      ],
+      "fotos": [
+        "https://example.com/imagens/maceio1.jpg",
+        "https://example.com/imagens/maceio1-2.jpg"
+      ],
+      "descricao": "Estrutura completa para férias em família nas belas praias de Maceió."
+    }
+  ]
