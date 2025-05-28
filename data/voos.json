@@ -661,6 +661,22 @@
     "classe": "Econômica",
     "aeroportoOrigem": "Plácido de Castro (RBR)",
     "aeroportoDestino": "Presidente Juscelino Kubitschek (BSB)"
-  }
+  },
+  {
+  "ciaAerea": "Air France",
+  "numeroVoo": "AF456",
+  "origem": "Natal - Brasil",
+  "destino": "Paris - França",
+  "dataIda": "2025-07-10",
+  "horaPartida": "17:45",
+  "dataVolta": "2025-07-20",
+  "horaChegada": "06:10",
+  "classe": "Econômica",
+  "aeroportoOrigem": "Aeroporto de Natal (NAT)",
+  "aeroportoDestino": "CDG",
+  "paradas": 0,
+  "preco": 4200.00,
+  "assentosDisponiveis": 10
+}
 ]
 

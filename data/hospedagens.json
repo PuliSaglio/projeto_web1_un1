@@ -609,5 +609,37 @@
       "https://example.com/imagens/maceio1-2.jpg"
     ],
     "descricao": "Estrutura completa para férias em família nas belas praias de Maceió."
-  }
+  },
+  {
+  "id": 1,
+  "nome": "Hôtel Lumière",
+  "localizacao": {
+    "cidade": "Paris",
+    "estado": "",
+    "pais": "França"
+  },
+  "endereco": "12 Rue de la Lumière, Paris",
+  "precoPorNoite": 620.00,
+  "capacidadePorQuarto": 2,
+  "quartosDisponiveis": 5,
+  "disponibilidade": {
+    "checkin": "2025-07-01",
+    "checkout": "2025-07-31"
+  },
+  "avaliacao": 4.7,
+  "quantidadeEstrelas": 4,
+  "comodidades": [
+    "Wi-Fi gratuito",
+    "Café da manhã incluso",
+    "Vista para a Torre Eiffel",
+    "Ar-condicionado",
+    "Recepção 24h"
+  ],
+  "fotos": [
+    "https://example.com/hotel-paris1.jpg",
+    "https://example.com/hotel-paris2.jpg"
+  ],
+  "descricao": "Hospedagem charmosa com excelente localização e atendimento impecável."
+}
+
 ]
