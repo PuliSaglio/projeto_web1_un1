@@ -4,10 +4,6 @@ document.addEventListener("DOMContentLoaded", function(){
     carregarReservas();
 });
 
-function getUsuarioLogado() {
-    return JSON.parse(sessionStorage.getItem('usuarioLogado'));
-}
-
 function carregarCarrinho() {
   const usuario = getUsuarioLogado();
   const chave = `carrinho_${usuario.email}`;
@@ -98,11 +94,6 @@ function finalizarCompra() {
     window.location.href = 'finalizar-compra.html';
 }
 
-function logout() {
-    sessionStorage.removeItem('usuarioLogado');
-    window.location.href = "index.html";
-}
-
 function carregarPassagens() {
   const usuario = getUsuarioLogado();
   const chavePassagens = `passagens_${usuario.email}`;
@@ -175,4 +166,20 @@ function carregarReservas() {
     `;
     container.appendChild(card);
   });
+}
+
+function getUsuarioLogado() {
+  const usuario = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+    
+  if (usuario === null) {
+    window.location.href = "index.html";
+    return null;
+  }
+  
+  return usuario;
+}
+
+function logout() {
+  sessionStorage.removeItem('usuarioLogado');
+  window.location.href = "index.html";
 }
