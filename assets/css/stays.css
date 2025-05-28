@@ -77,8 +77,8 @@ body {
 }
 
 .hero-image .text {
-    max-width: 450px;
-    padding: 230px 50px;
+    max-width: 40vw;
+    padding: 25vh 4vw 35vh 4vw;
     color: white;
 }
 
@@ -104,6 +104,20 @@ body {
     width: 90%;
     max-width: 800px;
 }
+
+.hero-search .form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    align-items: center;
+}
+
+.form input {
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
 
 .hero-search h2 {
     margin-top: 0;
@@ -138,24 +152,6 @@ body {
     color: #444;
 }
 
-.hero-search .row {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-}
-
-.hero-search .row>div {
-    flex: 1;
-    min-width: 200px;
-    border: none;
-    padding: 0;
-}
-
-.hero-search .row>div>div {
-    margin-top: 6px;
-}
-
 .hero-search .actions {
     display: flex;
     gap: 12px;
@@ -167,7 +163,7 @@ body {
     flex: 1;
 }
 
-.hero-search .actions button {
+.hero-search button {
     padding: 12px 24px;
     background: #00e1b4;
     color: white;
@@ -179,8 +175,22 @@ body {
     transition: background 0.3s;
 }
 
-.hero-search .actions button:hover {
+.hero-search button:hover {
     background: #00c2a1;
+}
+
+.extras {
+    grid-column: span 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.promo {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
 }
 
 /* RECENT SEARCHS */
@@ -559,6 +569,10 @@ body {
     .footer .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .form input, .form select {
+        width: 100%;
+    }
 }
 
 @media (max-width: 640px) {
@@ -571,7 +585,7 @@ body {
 
     /* RECENT SEARCH */
     .recent-searchs {
-        margin-top: 240px;
+        margin-top: 150px;
     }
 
     /* TRAVEL DEALS */
@@ -596,5 +610,45 @@ body {
 
     .travel-section .see-all-button {
         margin-top: 20px;
+    }
+
+    .hero-search .form {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+        align-items: center;
+    }
+      
+    .form input, .form select {
+        padding: 12px 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+    }
+
+    .extras {
+        grid-column: span 1;
+        font-size: 14px;
+
+        a {
+            font-size: 14px;
+        }
+    }
+
+    .hero-image .text {
+        max-width: 90vw;
+        padding: 10vh 4vw;
+        margin: auto;
+        text-align: center;
+        background: rgba(0,0,0,0.3);
+    }
+
+    .hero-image .text p {
+        margin-top: 3%;
+    }
+
+    .hero .hero-search {
+        bottom: -30vh;
     }
 }

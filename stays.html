@@ -25,35 +25,16 @@
                 </div>
             </div>
             <div class="hero-search">
-                <form action="#">
+                <form class="form" id="form">
                     <h2>Onde você irá ficar?</h2>
-                    <div class="row">
-                        <div>
-                            <div>
-                                <label for="fromTo">Destino</label>
-                                <input type="text" id="destino" placeholder="Tokyo" />
-                            </div>
-                            <div>
-                                <label for="passengerClass">Número de Hóspedes</label>
-                                <input type="number" id="num-hospedes"/>
-                            </div>
-
-                        </div>
-                        <div>
-                            <div>
-                                <label for="data-checkin">Check In</label>
-                                <input type="date" id="data-checkin"/>
-                            </div>
-                            <div>
-                                <label for="data-checkout">Check Out</label>
-                                <input type="date" id="data-checkout"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="actions">
-                        <input type="text" placeholder="Adicionar Código Promocional" />
-                        <button type="submit">Mostrar Reservas</button>
-                    </div>
+                  <input type="text" placeholder="Destino" id="destino" required/>
+                  <input type="number" placeholder="Numero de Hóspedes" id="n_hospedes" name="n_hospedes" required/>
+                  <input type="date" id="data-checkin"/>
+                  <input type="date" id="data-checkout" /> 
+                  <div class="extras">
+                    <a href="#" class="promo">+ Add Código Promocional</a>
+                    <button type="submit" class="show-deals">Mostrar Reservas</button>
+                  </div>
                 </form>
             </div>
         </section>
