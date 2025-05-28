@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
     selectTipoViagem.addEventListener('change' , function(){
         if(selectTipoViagem.value == "Ida e Volta"){
-            dataVoltaViagem.style.display = 'block';
+            dataVoltaViagem.disabled = true;
             dataVoltaViagem.required = true;
         }else {
-            dataVoltaViagem.style.display = 'none';
+            dataVoltaViagem.disabled = true;
             dataVoltaViagem.required = false;
             dataVoltaViagem.value = '';
         }

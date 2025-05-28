@@ -4,10 +4,6 @@ document.addEventListener("DOMContentLoaded", function(){
     carregarReservas();
 });
 
-function getUsuarioLogado() {
-    return JSON.parse(sessionStorage.getItem('usuarioLogado'));
-}
-
 function carregarCarrinho() {
   const usuario = getUsuarioLogado();
   const chave = `carrinho_${usuario.email}`;
@@ -98,11 +94,6 @@ function finalizarCompra() {
     window.location.href = 'finalizar-compra.html';
 }
 
-function logout() {
-    sessionStorage.removeItem('usuarioLogado');
-    window.location.href = "index.html";
-}
-
 function carregarPassagens() {
   const usuario = getUsuarioLogado();
   const chavePassagens = `passagens_${usuario.email}`;
@@ -122,7 +113,7 @@ function carregarPassagens() {
     card.innerHTML = `
       <div class="card-body">
         <h5 class="card-title">${voo.origem} → ${voo.destino}</h5>
-        <p class="card-text">
+        <p class="card-text text-secondary">
             <strong>Companhia:</strong> ${voo.ciaAerea}<br>
             <strong>Voo:</strong> ${voo.numeroVoo}<br>
             <strong>Data de Ida:</strong> ${voo.dataIda} às ${voo.horaPartida}<br>
@@ -161,7 +152,7 @@ function carregarReservas() {
     card.innerHTML = `
       <div class="card-body">
         <h5 class="card-title">${hospedagem.nome}</h5>
-        <p class="card-text">
+        <p class="card-text text-secondary">
             <strong>Local:</strong> ${hospedagem.localizacao.cidade}, ${hospedagem.localizacao.estado}, ${hospedagem.localizacao.pais}<br>
             <strong>Check-in:</strong> ${hospedagem.checkin}<br>
             <strong>Check-out:</strong> ${hospedagem.checkout}<br>
@@ -175,4 +166,20 @@ function carregarReservas() {
     `;
     container.appendChild(card);
   });
+}
+
+function getUsuarioLogado() {
+  const usuario = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+    
+  if (usuario === null) {
+    window.location.href = "index.html";
+    return null;
+  }
+  
+  return usuario;
+}
+
+function logout() {
+  sessionStorage.removeItem('usuarioLogado');
+  window.location.href = "index.html";
 }

@@ -24,7 +24,6 @@ document.querySelector("form").addEventListener("submit", function (event) {
       return;
     }
 
-    alert("Busca válida! Redirecionando...");
     const filtrosHospedagem = {
         destino: dadosForm.destino,
         numHospedes: dadosForm.numHospedes,
