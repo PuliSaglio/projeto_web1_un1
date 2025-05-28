@@ -113,7 +113,7 @@ function carregarPassagens() {
     card.innerHTML = `
       <div class="card-body">
         <h5 class="card-title">${voo.origem} → ${voo.destino}</h5>
-        <p class="card-text">
+        <p class="card-text text-secondary">
             <strong>Companhia:</strong> ${voo.ciaAerea}<br>
             <strong>Voo:</strong> ${voo.numeroVoo}<br>
             <strong>Data de Ida:</strong> ${voo.dataIda} às ${voo.horaPartida}<br>
@@ -152,7 +152,7 @@ function carregarReservas() {
     card.innerHTML = `
       <div class="card-body">
         <h5 class="card-title">${hospedagem.nome}</h5>
-        <p class="card-text">
+        <p class="card-text text-secondary">
             <strong>Local:</strong> ${hospedagem.localizacao.cidade}, ${hospedagem.localizacao.estado}, ${hospedagem.localizacao.pais}<br>
             <strong>Check-in:</strong> ${hospedagem.checkin}<br>
             <strong>Check-out:</strong> ${hospedagem.checkout}<br>

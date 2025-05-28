@@ -31,7 +31,10 @@ body {
 
 .navbar .left .active {
     padding: 17px 0;
-    border-bottom: 3px solid #00e1b4;
+}
+
+.navbar .left span:hover {
+  border-bottom: 3px solid #00e1b4;
 }
 
 .navbar .logo a {
