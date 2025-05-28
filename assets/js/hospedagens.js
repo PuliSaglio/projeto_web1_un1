@@ -1,6 +1,7 @@
 let dadosHospedagens = [];
 
 document.addEventListener("DOMContentLoaded", () => {
+    localStorage.removeItemItem('filtrosHospedagem');
     const filtros = JSON.parse(localStorage.getItem('filtrosHospedagem') || '{}')
 
     fetch('./data/hospedagens.json')
