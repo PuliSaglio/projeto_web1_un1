@@ -88,7 +88,6 @@ function removerDoCarrinho(index) {
 }
 
 function finalizarCompra() {
-    alert("Compra finalizada com sucesso!");
     const usuario = getUsuarioLogado();
     const chave = `carrinho_${usuario.email}`;
     window.location.href = 'finalizar-compra.html';

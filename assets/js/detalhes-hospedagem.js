@@ -58,6 +58,5 @@ document.getElementById("btn-reservar").addEventListener("click", () => {
     }; const chaveCarrinho = `carrinho_${usuario.email}`; const
       carrinho = JSON.parse(localStorage.getItem(chaveCarrinho)) || []; carrinho.push(reserva);
   localStorage.setItem(chaveCarrinho, JSON.stringify(carrinho));
-  alert("Hospedagem adicionada ao carrinho com sucesso!");
   window.location.href = "conta.html";
 });

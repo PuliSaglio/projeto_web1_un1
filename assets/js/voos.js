@@ -237,7 +237,6 @@ function adicionarAoCarrinho(voo, passageiros) {
   carrinhoAtual.push(itemCarrinho);
 
   localStorage.setItem(chaveCarrinho, JSON.stringify(carrinhoAtual));
-  alert("Voo adicionado ao carrinho com sucesso!");
 }
 
 function limparFiltro(){
