@@ -675,6 +675,7 @@
   "aeroportoOrigem": "Aeroporto de Natal (NAT)",
   "aeroportoDestino": "CDG",
   "paradas": 0,
+  "duracao": "6h 20min",
   "preco": 4200.00,
   "assentosDisponiveis": 10
 }

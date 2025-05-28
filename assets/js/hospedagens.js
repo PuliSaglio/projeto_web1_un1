@@ -1,7 +1,7 @@
 let dadosHospedagens = [];
+const botaoFiltro = document.getElementById('aplica-filtro')
 
 document.addEventListener("DOMContentLoaded", () => {
-    localStorage.removeItemItem('filtrosHospedagem');
     const filtros = JSON.parse(localStorage.getItem('filtrosHospedagem') || '{}')
 
     fetch('./data/hospedagens.json')
@@ -32,36 +32,42 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Erro ao carregar hospedagens:", err));
 });
 
-function renderizarHospedagens(lista) {
+botaoFiltro.addEventListener('click', function(){
+  aplicarFiltros(coletarDadosFormFiltros());
+})
+
+async function renderizarHospedagens(lista) {
     const container = document.getElementById("hospedagens-container");
     container.innerHTML = "";
 
     if (lista.length === 0) {
-    container.innerHTML = "<p class='text-muted'>Nenhuma hospedagem encontrada com esses critérios.</p>";
-    return;
+        container.innerHTML = "<p class='text-muted'>Nenhuma hospedagem encontrada com esses critérios.</p>";
+        return;
     }
 
-    lista.forEach(hotel => {
-    const col = document.createElement("div");
-    col.className = "col-md-6 col-lg-4";
+    for (const hotel of lista) {
+        const col = document.createElement("div");
+        col.className = "col-md-6 col-lg-4";
 
-    const estrelas = "⭐".repeat(hotel.quantidadeEstrelas);
+        const estrelas = "⭐".repeat(hotel.quantidadeEstrelas);
 
-    col.innerHTML = `
-        <div class="card card-hotel shadow-sm">
-        <img src="${hotel.fotos[0]}" class="card-img-top" alt="${hotel.nome}">
-        <div class="card-body">
-            <h5 class="card-title">${hotel.nome}</h5>
-            <p class="card-text text-muted">${hotel.localizacao.cidade}, ${hotel.localizacao.estado}</p>
-            <p class="mb-1"><strong>Preço:</strong> R$ ${hotel.precoPorNoite.toFixed(2)} / noite</p>
-            <p class="mb-2">${estrelas}</p>
-            <a href="#" class="btn btn-outline-primary btn-sm w-100" onclick='verDetalhes(${JSON.stringify(hotel)})'>Selecionar</a>
-        </div>
-        </div>
-    `;
+        const imagemUrl = await buscarImagemDoPexels(hotel.nome || "hotel resort");
 
-    container.appendChild(col);
-    });
+        col.innerHTML = `
+            <div class="card card-hotel shadow-sm">
+                <img src="${imagemUrl}" class="card-img-top" alt="${hotel.nome}">
+                <div class="card-body">
+                    <h5 class="card-title">${hotel.nome}</h5>
+                    <p class="card-text text-muted">${hotel.localizacao.cidade}, ${hotel.localizacao.estado}</p>
+                    <p class="mb-1"><strong>Preço:</strong> R$ ${hotel.precoPorNoite.toFixed(2)} / noite</p>
+                    <p class="mb-2">${estrelas}</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm w-100" onclick='verDetalhes(${JSON.stringify(hotel)})'>Selecionar</a>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(col);
+    }
 }
 
 function coletarDadosFormFiltros(){
@@ -77,18 +83,16 @@ function coletarDadosFormFiltros(){
 }
 
 function aplicarFiltros(dadosFiltros) {
-  let resultado = [...hospedagens];
+  let resultado = [...dadosHospedagens];
 
  
-  const checkin = document.getElementById("filtro-checkin").value;
-  const checkout = document.getElementById("filtro-checkout").value;
-  const hospedes = parseInt(document.getElementById("filtro-hospedes").value);
+  // const checkin = document.getElementById("filtro-checkin").value;
+  // const checkout = document.getElementById("filtro-checkout").value;
+  // const hospedes = parseInt(document.getElementById("filtro-hospedes").value);
 
   if (dadosFiltros.cidade) resultado = filtrarHospedagensPorCidade(resultado, dadosFiltros.cidade);
   if (!isNaN(dadosFiltros.precoMax)) resultado = filtrarHospedagensPorPreco(resultado, dadosFiltros.precoMax);
   if (!isNaN(dadosFiltros.estrelasMin)) resultado = filtrarHospedagensPorEstrelas(resultado, dadosFiltros.estrelasMin);
-  resultado = filtrarHospedagensPorData(resultado, checkin, checkout);
-  resultado = filtrarHospedagensPorCapacidade(resultado, hospedes);
 
   renderizarHospedagens(resultado);
 }
@@ -131,4 +135,22 @@ function filtrarHospedagensPorCapacidade(hospedagens, numeroHospedes) {
 function verDetalhes(hospedagem) {
   sessionStorage.setItem("hospedagemSelecionada", JSON.stringify(hospedagem));
   window.location.href = "detalhes-hospedagem.html";
+}
+
+function limparFiltro(){
+  localStorage.removeItem('filtrosHospedagem');
+  location.reload();
+}
+
+const PEXELS_API_KEY = "h5gy6naTXcrk50QVQoQL6FryDRdy02EmkJQzLmzlqqX156ceY2rxOQuo";
+
+async function buscarImagemDoPexels(query) {
+    const response = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=1`, {
+        headers: {
+            Authorization: PEXELS_API_KEY
+        }
+    });
+
+    const data = await response.json();
+    return data.photos?.[0]?.src?.medium || "https://via.placeholder.com/400x300?text=Imagem+indisponível";
 }
