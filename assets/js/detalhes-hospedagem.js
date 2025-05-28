@@ -2,7 +2,6 @@ const hospedagem = JSON.parse(sessionStorage.getItem("hospedagemSelecionada"));
 
 if (!hospedagem) {
   document.getElementById("conteudo-hospedagem").innerHTML = "<p>Hospedagem não encontrada.</p>";
-  return;
 }
 
 const estrelas = "⭐".repeat(hospedagem.quantidadeEstrelas);

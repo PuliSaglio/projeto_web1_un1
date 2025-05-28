@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     carregarCarrinho();
     carregarPassagens();
+    carregarReservas();
 });
 
 function getUsuarioLogado() {
@@ -134,6 +135,41 @@ function carregarPassagens() {
             <strong>Passageiro:</strong> ${voo.passageiro}<br>
             <strong>Localizador (PNR):</strong> ${voo.pnr}<br>
             <strong>Data da Compra:</strong> ${new Date(voo.dataCompra).toLocaleString()}
+        </p>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function carregarReservas() {
+  const usuario = getUsuarioLogado();
+  const chaveReservas = `reservas_${usuario.email}`;
+  const reservas = JSON.parse(localStorage.getItem(chaveReservas)) || [];
+
+  const container = document.getElementById("reservas-container");
+  container.innerHTML = "";
+
+  if (reservas.length === 0) {
+    container.innerHTML = "<p class='text-muted'>Nenhuma hospedagem reservada ainda.</p>";
+    return;
+  }
+
+  reservas.forEach((hospedagem, index) => {
+    const card = document.createElement("div");
+    card.className = "card card-hospedagem";
+    card.innerHTML = `
+      <div class="card-body">
+        <h5 class="card-title">${hospedagem.nome}</h5>
+        <p class="card-text">
+            <strong>Local:</strong> ${hospedagem.localizacao.cidade}, ${hospedagem.localizacao.estado}, ${hospedagem.localizacao.pais}<br>
+            <strong>Check-in:</strong> ${hospedagem.checkin}<br>
+            <strong>Check-out:</strong> ${hospedagem.checkout}<br>
+            <strong>Noites:</strong> ${hospedagem.noites}<br>
+            <strong>Hóspedes:</strong> ${hospedagem.quantidadeHospedes}<br>
+            <strong>Comodidades:</strong> ${hospedagem.comodidades.join(', ')}<br>
+            <strong>Total:</strong> R$ ${hospedagem.precoTotal.toFixed(2)}<br>
+            <strong>Data da Reserva:</strong> ${new Date(hospedagem.dataReserva).toLocaleString()}
         </p>
       </div>
     `;
