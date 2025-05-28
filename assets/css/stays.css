@@ -142,7 +142,7 @@ body {
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
-    margin-bottom: 16px;
+    margin: 0;
 }
 
 .hero-search .row>div {
@@ -568,6 +568,17 @@ body {
         bottom: -440px;
     }
 
+    .hero-search .row {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+        margin: 0;
+    }
+
+    .hero-search  .actions{
+        margin-top: 16px;
+    }
 
     /* RECENT SEARCH */
     .recent-searchs {

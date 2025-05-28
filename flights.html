@@ -7,7 +7,7 @@
   <title>IMD - Agência de Viagens</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/flights.css">
 </head>
@@ -16,7 +16,7 @@
   <header id="navbar-container">
     <!-- Navbar será inserida aqui dinamicamente -->
   </header>
-  
+
   <main>
     <section class="hero">
       <div class="hero-image">
@@ -26,23 +26,49 @@
         </div>
       </div>
       <div class="hero-search">
-        <form class="form" id="form">
-          <h2>Para onde você está voando?</h2>
-        <input type="text" placeholder="Origem" id="origem" required/>
-        <input type="text" placeholder="Destino" id="destino" required/>
-        <select id="opcao-viagem">
-          <option>Ida e Volta</option>
-          <option selected>Só Ida</option>
-        </select>
-        <input type="date" id="data-viagem"/>
-        <input type="date" id="data-volta" style="display: none;"> 
-        <input type="number" placeholder="Numero de Passageiros" id="passageiros" required/>
-        <div class="extras">
-          <a href="#" class="promo">+ Add Código Promocional</a>
-          <button type="submit" class="show-flights">🚀 Buscar Voos</button>
-        </div>
-      </form>
-      </div>
+        <form id="form">
+            <h2><strong>Para onde você está voando?</strong></h2>
+            <div class="row">
+                <div>
+                    <div>
+                        <label for="origem">Origem</label>
+                        <input type="text" placeholder="Origem" id="origem" required />
+                    </div>
+                    <div>
+                      <label for="destino">Destino</label>
+                      <input type="text" placeholder="Destino" id="destino" required />
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="data-viagem">Data da Viagem</label>
+                        <input type="date" id="data-viagem" />
+                    </div>
+                    <div>
+                        <label for="data-volta">Data de Volta</label>
+                        <input type="date" id="data-volta" >
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="passageiros">Número de Passageiros</label>
+                        <input type="number" placeholder="Número de Passageiros" id="passageiros" required />
+                    </div>
+                    <div>
+                      <label for="opcao-viagem">Tipo de Viagem</label>
+                      <select id="opcao-viagem">
+                          <option selected>Ida e Volta</option>
+                          <option>Só Ida</option>
+                      </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row actions">
+                <input type="text" placeholder="Adicionar Código Promocional" />
+                <button type="submit" class="show-flights">Buscar Voos</button>
+            </div>
+        </form>
+    </div>    
     </section>
     <section class="section-map">
       <div class="top-text">
@@ -123,18 +149,12 @@
             src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             alt="Londres: Aventura no London Eye">
           <div class="deal-info">
-            <h3ncia de Viagens</title>
-              <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-            
-              <link rel="stylesheet" href="assets/css/flights.css">
-            </head>
-            >Londres</h3>
-            <p class="deal-description">Aventura no London Eye</p>
-            <div class="price-book">
-              <span class="price">R$ 3500</span>
-              <button class="book-button">Reservar Voo</button>
-            </div>
+              <h3>Londres</h3>
+              <p class="deal-description">Aventura no London Eye</p>
+              <div class="price-book">
+                <span class="price">R$ 3500</span>
+                <button class="book-button">Reservar Voo</button>
+              </div>
           </div>
         </div>
         <div class="deal-card">
@@ -171,19 +191,28 @@
         <div class="col-md-2">
           <h4>Destinos</h4>
           <ul class="list-unstyled">
-            <li>Canada</li><li>Alaska</li><li>França</li><li>Iceland</li>
+            <li>Canada</li>
+            <li>Alaska</li>
+            <li>França</li>
+            <li>Iceland</li>
           </ul>
         </div>
         <div class="col-md-2">
           <h4>Atividades</h4>
           <ul class="list-unstyled">
-            <li>Aurora Boreal</li><li>Cruzeiro</li><li>Multi-atividades</li><li>Caiaque</li>
+            <li>Aurora Boreal</li>
+            <li>Cruzeiro</li>
+            <li>Multi-atividades</li>
+            <li>Caiaque</li>
           </ul>
         </div>
         <div class="col-md-2">
           <h4>Blog</h4>
           <ul class="list-unstyled">
-            <li>Bali</li><li>Sri Lanka</li><li>Peru</li><li>Tailândia</li>
+            <li>Bali</li>
+            <li>Sri Lanka</li>
+            <li>Peru</li>
+            <li>Tailândia</li>
           </ul>
         </div>
         <div class="col-md-3">
@@ -196,7 +225,7 @@
         </div>
       </div>
     </div>
-  </footer>  
+  </footer>
 
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
