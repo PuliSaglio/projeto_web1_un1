@@ -10,12 +10,10 @@ function getUsuarioLogado() {
 }
 
 function gerarPNR() {
-  // Exemplo: 6 letras maiúsculas aleatórias
   return Array.from({length: 6}, () => String.fromCharCode(65 + Math.floor(Math.random() * 26))).join('');
 }
 
 async function salvarCompras(usuario, carrinho) {
-  // Salva passagens
   for (const item of carrinho) {
     if (item.vooId) {
       for (let i = 0; i < (item.quantidadePassageiros || 1); i++) {
@@ -27,7 +25,6 @@ async function salvarCompras(usuario, carrinho) {
         });
       }
     }
-    // Salva reservas de hospedagem
     if (item.hospedagemId) {
       await push(ref(db, `usuarios/${btoa(usuario.email)}/reservas`), {
         hospedagemId: item.hospedagemId,
@@ -135,7 +132,6 @@ selectForma.addEventListener("change", function() {
   divBoleto.style.display = this.value === "boleto" ? "block" : "none";
 });
 
-// Validação e submissão do pagamento
 document.getElementById("form-pagamento").addEventListener("submit", async function(e) {
   e.preventDefault();
   const forma = selectForma.value;
@@ -147,7 +143,6 @@ document.getElementById("form-pagamento").addEventListener("submit", async funct
     if (!forma) throw new Error("Escolha uma forma de pagamento.");
 
     if (forma === "cartao") {
-      // Validação simples dos campos do cartão
       if (
         !document.getElementById("numero-cartao").value ||
         !document.getElementById("nome-cartao").value ||
@@ -156,7 +151,6 @@ document.getElementById("form-pagamento").addEventListener("submit", async funct
       ) {
         throw new Error("Preencha todos os campos do cartão.");
       }
-      // Simulação de pagamento com cartão
       const resposta = await fetch("https://reqres.in/api/pay", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -170,19 +164,15 @@ document.getElementById("form-pagamento").addEventListener("submit", async funct
       if (!resposta.ok) throw new Error("Pagamento recusado pelo cartão.");
       document.getElementById("mensagem-pagamento").innerHTML = `<div class="alert alert-success">Pagamento aprovado! Obrigado pela compra.</div>`;
     } else if (forma === "pix") {
-      // Simulação de pagamento Pix
       document.getElementById("mensagem-pagamento").innerHTML = `<div class="alert alert-success">Pagamento via Pix recebido! Obrigado pela compra.</div>`;
     } else if (forma === "boleto") {
-      // Simulação de geração de boleto
       document.getElementById("mensagem-pagamento").innerHTML = `<div class="alert alert-success">Boleto gerado! Pagamento confirmado após compensação bancária.</div>`;
     }
 
-    // Após pagamento aprovado:
     const usuario = getUsuarioLogado();
     const carrinho = await carrinhoService.obterCarrinho(usuario.email);
     await salvarCompras(usuario, carrinho);
 
-    // Limpa o carrinho no Firebase
     await carrinhoService.salvarCarrinho(usuario.email, []);
     document.getElementById("mensagem-pagamento").innerHTML = `<div class="alert alert-success">Compra finalizada com sucesso!</div>`;
     setTimeout(() => window.location.href = "conta.html", 2000);

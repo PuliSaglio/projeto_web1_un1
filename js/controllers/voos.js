@@ -118,16 +118,13 @@ function criarCard(voo, index, passageiros) {
     });
   });
 
-  // Botão Editar (apenas admin)
   if (isAdmin) {
     card.querySelector(".btn-editar").addEventListener("click", async (e) => {
       e.preventDefault();
-      // Salva o voo no sessionStorage para edição
       sessionStorage.setItem("vooParaEditar", JSON.stringify(voo));
       window.location.href = "editar-voo.html";
     });
 
-    // Botão Deletar (apenas admin)
     card.querySelector(".btn-deletar").addEventListener("click", async (e) => {
       e.preventDefault();
       if (confirm("Tem certeza que deseja deletar este voo?")) {
@@ -246,17 +243,14 @@ async function adicionarAoCarrinho(voo, quantidadePassageiros) {
   }
 
   try {
-    // Busca o carrinho atual do Firebase
     let carrinho = await carrinhoService.obterCarrinho(usuario.email);
     if (!Array.isArray(carrinho)) carrinho = [];
 
-    // Evita duplicidade do mesmo voo
     if (carrinho.some(item => item.vooId === voo.id)) {
       alert("Este voo já está no seu carrinho.");
       return;
     }
 
-    // Adiciona o voo ao carrinho (mesma estrutura das hospedagens)
     carrinho.push({
       vooId: voo.id,
       origem: voo.origem,
@@ -271,10 +265,8 @@ async function adicionarAoCarrinho(voo, quantidadePassageiros) {
       dataReserva: new Date().toISOString()
     });
 
-    // Salva no Firebase
     await carrinhoService.salvarCarrinho(usuario.email, carrinho);
 
-    // (Opcional) Atualiza localStorage para acesso rápido
     localStorage.setItem(`carrinho_${usuario.email}`, JSON.stringify(carrinho));
 
 
@@ -284,7 +276,6 @@ async function adicionarAoCarrinho(voo, quantidadePassageiros) {
   }
 }
 
-// Exemplo de uso ao clicar no botão de adicionar ao carrinho:
 function configurarBotoesAdicionar() {
   document.querySelectorAll('.btn-adicionar-carrinho').forEach(btn => {
     btn.addEventListener('click', async function() {
@@ -298,6 +289,5 @@ function configurarBotoesAdicionar() {
   });
 }
 
-// Chame configurarBotoesAdicionar() após renderizar os cards de voos, se necessário
 
 

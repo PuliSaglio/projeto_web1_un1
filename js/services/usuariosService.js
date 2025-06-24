@@ -1,14 +1,12 @@
 import { db } from './firebaseConfig.js';
 import { ref, push, set, get, child, query, orderByChild, equalTo } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-// Verifica se já existe usuário com o mesmo e-mail
 export async function usuarioExiste(email) {
   const usuariosRef = ref(db, 'usuarios');
   const snapshot = await get(query(usuariosRef, orderByChild('email'), equalTo(email)));
   return snapshot.exists();
 }
 
-// Adiciona novo usuário
 export async function adicionarUsuario(usuario) {
   const usuariosRef = ref(db, 'usuarios');
   const novaRef = push(usuariosRef);

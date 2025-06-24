@@ -2,15 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const authButtons = document.getElementById("auth-buttons");
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
 
-  // Verifica se o usuário está logado
   if (usuario) {
-    // Atualiza os botões de autenticação para mostrar "Minha Conta" e "Sair"
     authButtons.innerHTML = `
       <a href="conta.html" class="btn btn-outline-light me-2">Minha Conta</a>
       <button class="btn btn-danger font-bold" onclick="logout()"><i class="bi bi-box-arrow-right"></i></button>
     `;
   } else {
-    // Exibe os botões padrão de "Cadastro" e "Login"
     authButtons.innerHTML = `
       <a href="cadastro.html" class="btn btn-outline-light me-2">Cadastro</a>
       <a href="login.html" class="btn btn-outline-light">Login</a>
@@ -23,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioLogado"));
 
   if (usuario) {
-    // Navbar para usuário logado
     navbarContainer.innerHTML = `
       <div class="navbar">
         <div class="left">
@@ -41,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
   } else {
-    // Navbar padrão
     navbarContainer.innerHTML = `
       <div class="navbar">
         <div class="left">
@@ -61,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function logout() {
-  // Remove o usuário da sessão e redireciona para a página inicial
   sessionStorage.removeItem("usuarioLogado");
-  window.location.href = "index.html"; // Redireciona para a página inicial após logout
+  window.location.href = "index.html";
 }

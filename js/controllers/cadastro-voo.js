@@ -1,4 +1,3 @@
-// Checagem de autenticação e permissão admin
 function getUsuarioLogado() {
   const usuario = sessionStorage.getItem("usuarioLogado");
   return usuario ? JSON.parse(usuario) : null;

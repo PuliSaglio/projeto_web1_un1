@@ -4,7 +4,6 @@ import { ref, push, set, get, child, update, remove } from "https://www.gstatic.
 export async function listarHospedagens() {
   const snapshot = await get(child(ref(db), 'hospedagens'));
   if (snapshot.exists()) {
-    // Retorna array de hospedagens com id
     return Object.entries(snapshot.val()).map(([id, data]) => ({ id, ...data }));
   }
   return [];

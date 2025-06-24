@@ -17,7 +17,6 @@ if (!voo) {
   window.location.href = "voos.html";
 }
 
-// Preenche o formulário com os dados do voo
 window.addEventListener("DOMContentLoaded", () => {
   for (const key in voo) {
     const input = document.getElementById(key);
@@ -28,7 +27,6 @@ window.addEventListener("DOMContentLoaded", () => {
 document.getElementById('form-editar-voo').addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  // Coleta os dados do formulário
   const campos = [
     "origem", "destino", "dataIda", "dataVolta", "horaPartida", "horaChegada",
     "assentosDisponiveis", "preco", "paradas", "duracao", "ciaAerea",

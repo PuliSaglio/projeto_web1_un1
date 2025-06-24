@@ -84,14 +84,12 @@ function renderizarHospedagens(lista) {
             </div>
         `;
 
-        // Botão Selecionar
         const btnSelecionar = col.querySelector('.btn-selecionar-hotel');
         btnSelecionar.addEventListener('click', (e) => {
             e.preventDefault();
             verDetalhes(hotel.id);
         });
 
-        // Botão Editar (apenas admin)
         if (isAdmin) {
             col.querySelector('.btn-editar-hotel').addEventListener('click', (e) => {
                 e.preventDefault();
@@ -99,7 +97,6 @@ function renderizarHospedagens(lista) {
                 window.location.href = "editar-hospedagem.html";
             });
 
-            // Botão Deletar (apenas admin)
             col.querySelector('.btn-deletar-hotel').addEventListener('click', async (e) => {
                 e.preventDefault();
                 if (confirm("Tem certeza que deseja deletar esta hospedagem?")) {
@@ -128,11 +125,6 @@ function coletarDadosFormFiltros(){
 
 function aplicarFiltros(dadosFiltros) {
   let resultado = [...dadosHospedagens];
-
- 
-  // const checkin = document.getElementById("filtro-checkin").value;
-  // const checkout = document.getElementById("filtro-checkout").value;
-  // const hospedes = parseInt(document.getElementById("filtro-hospedes").value);
 
   if (dadosFiltros.cidade) resultado = filtrarHospedagensPorCidade(resultado, dadosFiltros.cidade);
   if (!isNaN(dadosFiltros.precoMax)) resultado = filtrarHospedagensPorPreco(resultado, dadosFiltros.precoMax);

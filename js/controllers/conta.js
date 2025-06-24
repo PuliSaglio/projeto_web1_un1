@@ -27,7 +27,6 @@ async function carregarCarrinho() {
   }
 
   for (const item of carrinho) {
-    // Exibe voo
     if (item.vooId) {
       const voo = await voosService.buscarVooPorId(item.vooId);
       if (voo) {
@@ -49,7 +48,6 @@ async function carregarCarrinho() {
         container.appendChild(card);
       }
     }
-    // Exibe hospedagem
     else if (item.hospedagemId) {
       const card = document.createElement("div");
       card.className = "card card-hospedagem mb-3";
@@ -74,7 +72,6 @@ async function carregarCarrinho() {
   }
 }
 
-// Remover voo do carrinho e persistir no Firebase
 window.removerVooDoCarrinho = async function(vooId) {
   const usuario = getUsuarioLogado();
   let carrinho = await carrinhoService.obterCarrinho(usuario.email);
@@ -84,7 +81,6 @@ window.removerVooDoCarrinho = async function(vooId) {
   carregarCarrinho();
 }
 
-// Remover hospedagem do carrinho e persistir no Firebase
 window.removerHospedagemDoCarrinho = async function(hospedagemId) {
   const usuario = getUsuarioLogado();
   let carrinho = await carrinhoService.obterCarrinho(usuario.email);
@@ -94,7 +90,6 @@ window.removerHospedagemDoCarrinho = async function(hospedagemId) {
   carregarCarrinho();
 }
 
-// Adicionar voo ao carrinho e persistir no Firebase
 export async function adicionarVooAoCarrinho(reserva, usuario) {
   let carrinho = await carrinhoService.obterCarrinho(usuario.email);
   if (!Array.isArray(carrinho)) carrinho = [];

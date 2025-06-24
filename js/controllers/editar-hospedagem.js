@@ -17,7 +17,6 @@ if (!hospedagem) {
   window.location.href = "hospedagens.html";
 }
 
-// Preenche o formulário com os dados da hospedagem
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById('nome').value = hospedagem.nome || '';
   document.getElementById('endereco').value = hospedagem.endereco || '';

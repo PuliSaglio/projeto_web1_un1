@@ -6,7 +6,7 @@ async function adicionarHospedagemAoCarrinho(reserva, usuario) {
   if (!Array.isArray(carrinho)) carrinho = [];
   carrinho.push(reserva);
   await carrinhoService.salvarCarrinho(usuario.email, carrinho);
-  localStorage.setItem(chave, JSON.stringify(carrinho)); // opcional: manter local para acesso rápido
+  localStorage.setItem(chave, JSON.stringify(carrinho));
 }
 
 const hospedagem = JSON.parse(sessionStorage.getItem("hospedagemSelecionada"));
@@ -69,7 +69,6 @@ document.getElementById("btn-reservar").addEventListener("click", async () => {
 
   const total = hospedagem.precoPorNoite * noites;
 
-  // Adiciona hospedagemId para identificar no carrinho
   const reserva = {
     hospedagemId: hospedagem.id,
     nome: hospedagem.nome,

@@ -14,7 +14,6 @@ if (!usuario || usuario.role !== "admin") {
 document.getElementById('form-cadastro-hospedagem').addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  // Coleta dos campos simples
   const nome = document.getElementById('nome').value.trim();
   const endereco = document.getElementById('endereco').value.trim();
   const cidade = document.getElementById('cidade').value.trim();
@@ -37,7 +36,6 @@ document.getElementById('form-cadastro-hospedagem').addEventListener('submit', a
     .filter(f => f.length > 0);
   const descricao = document.getElementById('descricao').value.trim();
 
-  // Monta o objeto conforme o modelo
   const hospedagem = {
     nome,
     localizacao: {
