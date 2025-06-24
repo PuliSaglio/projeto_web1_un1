@@ -63,7 +63,7 @@ function renderizarHospedagens(lista) {
 
         col.innerHTML = `
             <div class="card card-hotel shadow-sm">
-                <img src="" class="card-img-top" alt="${hotel.nome}">
+                <img src="${hotel.fotos}" class="card-img-top" alt="${hotel.nome}">
                 <div class="card-body">
                     <h5 class="card-title">${hotel.nome}</h5>
                     <p class="card-text text-muted">${hotel.localizacao.cidade}, ${hotel.localizacao.estado}</p>
@@ -72,14 +72,12 @@ function renderizarHospedagens(lista) {
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="#" class="btn btn-outline-primary btn-sm w-100 btn-selecionar-hotel">Selecionar</a>
                     </div>
-                    <div>
                     ${isAdmin ? `
-                        <div>
-                            <button class="btn btn-warning btn-sm me-2 btn-editar-hotel" data-id="${hotel.id}">Editar</button>
+                        <div class="d-flex justify-content-between pt-3">
+                            <button class="btn btn-warning btn-sm btn-editar-hotel" data-id="${hotel.id}">Editar</button>
                             <button class="btn btn-danger btn-sm btn-deletar-hotel" data-id="${hotel.id}">Deletar</button>
                         </div>
                         ` : ""}
-                    </div>
                 </div>
             </div>
         `;
@@ -94,7 +92,7 @@ function renderizarHospedagens(lista) {
             col.querySelector('.btn-editar-hotel').addEventListener('click', (e) => {
                 e.preventDefault();
                 sessionStorage.setItem("hospedagemParaEditar", JSON.stringify(hotel));
-                window.location.href = "/html/ediçao/editar-hospedagem.html";
+                window.location.href = "/html/edicao/editar-hospedagem.html";
             });
 
             col.querySelector('.btn-deletar-hotel').addEventListener('click', async (e) => {

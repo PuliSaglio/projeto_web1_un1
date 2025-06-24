@@ -122,7 +122,7 @@ function criarCard(voo, index, passageiros) {
     card.querySelector(".btn-editar").addEventListener("click", async (e) => {
       e.preventDefault();
       sessionStorage.setItem("vooParaEditar", JSON.stringify(voo));
-      window.location.href = "/html/ediçao/editar-voo.html";
+      window.location.href = "/html/edicao/editar-voo.html";
     });
 
     card.querySelector(".btn-deletar").addEventListener("click", async (e) => {

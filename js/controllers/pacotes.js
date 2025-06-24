@@ -46,7 +46,6 @@ async function adicionarPacoteAoCarrinho(pacote, usuario) {
       avaliacao: hospedagem.avaliacao,
       quantidadeEstrelas: hospedagem.quantidadeEstrelas,
       comodidades: hospedagem.comodidades,
-      fotos: hospedagem.fotos,
       descricao: hospedagem.descricao,
       checkin: hospedagem.disponibilidade.checkin,
       checkout: hospedagem.disponibilidade.checkout,

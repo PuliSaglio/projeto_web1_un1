@@ -193,7 +193,7 @@ function mostrarBotaoAdmin() {
         const container = document.querySelector(".container.py-5");
         if (container) {
             const div = document.createElement("div");
-            div.className = "mb-4 text-end";
+            div.className = "mb-4 d-flex justify-content-center gap-2"; // Centraliza e adiciona espaçamento
             div.innerHTML = `
                 <a href="/html/cadastros/cadastro-voo.html" class="btn btn-warning fw-bold me-2">
                     Cadastrar Novo Voo (Admin)
