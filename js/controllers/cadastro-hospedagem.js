@@ -7,7 +7,7 @@ function getUsuarioLogado() {
 
 const usuario = getUsuarioLogado();
 if (!usuario || usuario.role !== "admin") {
-  window.location.href = "login.html";
+  window.location.href = "/html/login.html";
   throw new Error("Acesso negado: apenas administradores podem acessar esta página.");
 }
 

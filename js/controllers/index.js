@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         localStorage.setItem('filtrosViagem', JSON.stringify(filtrosViagem));
 
-        window.location.href = 'voos.html';
+        window.location.href = '/html/listagem/voos.html';
     })
 })
 

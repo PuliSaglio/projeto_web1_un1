@@ -35,7 +35,7 @@ async function login(email, senha) {
     const usuario = await usuariosService.buscarUsuarioPorEmailESenha(email, senha);
     if (usuario) {
         sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-        window.location.href = "conta.html";
+        window.location.href = "/html/conta.html";
     } else {
         alert("Email ou senha inválidos.");
     }

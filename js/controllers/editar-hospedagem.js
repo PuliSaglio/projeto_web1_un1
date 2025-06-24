@@ -7,14 +7,14 @@ function getUsuarioLogado() {
 
 const usuario = getUsuarioLogado();
 if (!usuario || usuario.role !== "admin") {
-  window.location.href = "login.html";
+  window.location.href = "/html/login.html";
   throw new Error("Acesso negado: apenas administradores podem acessar esta página.");
 }
 
 const hospedagem = JSON.parse(sessionStorage.getItem("hospedagemParaEditar"));
 if (!hospedagem) {
   alert("Nenhuma hospedagem selecionada para edição.");
-  window.location.href = "hospedagens.html";
+  window.location.href = "/html/listagem/hospedagens.html";
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -91,7 +91,7 @@ document.getElementById('form-editar-hospedagem').addEventListener('submit', asy
     mensagemDiv.textContent = 'Hospedagem atualizada com sucesso!';
     mensagemDiv.className = 'alert alert-success';
     setTimeout(() => {
-      window.location.href = "hospedagens.html";
+      window.location.href = "/html/listagem/hospedagens.html";
     }, 1200);
   } catch (error) {
     mensagemDiv.textContent = 'Erro ao atualizar hospedagem. Tente novamente.';

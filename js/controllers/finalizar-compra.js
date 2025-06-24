@@ -42,7 +42,7 @@ async function salvarCompras(usuario, carrinho) {
 async function carregarProdutosCarrinho() {
   const usuario = getUsuarioLogado();
   if (!usuario) {
-    window.location.href = "login.html";
+    window.location.href = "/html/login.html";
     return;
   }
   const carrinho = await carrinhoService.obterCarrinho(usuario.email);
@@ -175,7 +175,7 @@ document.getElementById("form-pagamento").addEventListener("submit", async funct
 
     await carrinhoService.salvarCarrinho(usuario.email, []);
     document.getElementById("mensagem-pagamento").innerHTML = `<div class="alert alert-success">Compra finalizada com sucesso!</div>`;
-    setTimeout(() => window.location.href = "conta.html", 2000);
+    setTimeout(() => window.location.href = "/html/conta.html", 2000);
 
   } catch (err) {
     document.getElementById("mensagem-pagamento").innerHTML = `<div class="alert alert-danger">Erro ao finalizar compra: ${err.message}</div>`;

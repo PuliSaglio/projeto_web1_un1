@@ -7,14 +7,14 @@ function getUsuarioLogado() {
 
 const usuario = getUsuarioLogado();
 if (!usuario || usuario.role !== "admin") {
-  window.location.href = "login.html";
+  window.location.href = "/html/login.html";
   throw new Error("Acesso negado: apenas administradores podem acessar esta página.");
 }
 
 const voo = JSON.parse(sessionStorage.getItem("vooParaEditar"));
 if (!voo) {
   alert("Nenhum voo selecionado para edição.");
-  window.location.href = "voos.html";
+  window.location.href = "/html/listagem/voos.html";
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -40,5 +40,5 @@ document.getElementById('form-editar-voo').addEventListener('submit', async (e) 
 
   await voosService.atualizarVoo(voo.id, vooEditado);
   alert("Voo atualizado com sucesso!");
-  window.location.href = "voos.html";
+  window.location.href = "/html/listagem/voos.html";
 });

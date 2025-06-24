@@ -92,5 +92,5 @@ document.getElementById("btn-reservar").addEventListener("click", async () => {
   };
 
   await adicionarHospedagemAoCarrinho(reserva, usuario);
-  window.location.href = "conta.html";
+  window.location.href = "/html/conta.html";
 });

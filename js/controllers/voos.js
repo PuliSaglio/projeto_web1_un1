@@ -114,7 +114,7 @@ function criarCard(voo, index, passageiros) {
     console.log(`Selecionando voo ${voo.id} para ${numPassageiros} passageiro(s)`);
     adicionarAoCarrinho(voo, numPassageiros);
     adicionarAoCarrinho(voo, numPassageiros).then(() => {
-      window.location.href = "conta.html";
+      window.location.href = "/html/conta.html";
     });
   });
 
@@ -122,7 +122,7 @@ function criarCard(voo, index, passageiros) {
     card.querySelector(".btn-editar").addEventListener("click", async (e) => {
       e.preventDefault();
       sessionStorage.setItem("vooParaEditar", JSON.stringify(voo));
-      window.location.href = "editar-voo.html";
+      window.location.href = "/html/ediçao/editar-voo.html";
     });
 
     card.querySelector(".btn-deletar").addEventListener("click", async (e) => {
@@ -238,7 +238,7 @@ async function adicionarAoCarrinho(voo, quantidadePassageiros) {
   const usuario = getUsuarioLogado();
   if (!usuario) {
     alert("Você precisa estar logado para adicionar ao carrinho.");
-    window.location.href = "login.html";
+    window.location.href = "/html/login.html";
     return;
   }
 

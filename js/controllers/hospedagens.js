@@ -94,7 +94,7 @@ function renderizarHospedagens(lista) {
             col.querySelector('.btn-editar-hotel').addEventListener('click', (e) => {
                 e.preventDefault();
                 sessionStorage.setItem("hospedagemParaEditar", JSON.stringify(hotel));
-                window.location.href = "editar-hospedagem.html";
+                window.location.href = "/html/ediçao/editar-hospedagem.html";
             });
 
             col.querySelector('.btn-deletar-hotel').addEventListener('click', async (e) => {
@@ -172,7 +172,7 @@ function verDetalhes(hospedagemId) {
   const hospedagem = dadosHospedagens.find(h => h.id === hospedagemId);
   if (hospedagem) {
     sessionStorage.setItem("hospedagemSelecionada", JSON.stringify(hospedagem));
-    window.location.href = "detalhes-hospedagem.html";
+    window.location.href = "/html/listagem/detalhes-hospedagem.html";
   } else {
     alert("Hospedagem não encontrada.");
   }

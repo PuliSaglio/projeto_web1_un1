@@ -20,7 +20,7 @@ document.querySelector('.formulario').addEventListener('submit', async function(
       role: "user"
     });
     alert("Usuário registrado com sucesso!");
-    window.location.href = 'login.html';
+    window.location.href = '/html/login.html';
   }
 });
 

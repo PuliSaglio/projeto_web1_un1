@@ -31,7 +31,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
         dataCheckout: dadosForm.dataCheckout
     };
     localStorage.setItem('filtrosHospedagem', JSON.stringify(filtrosHospedagem));
-    window.location.href = 'hospedagens.html';
+    window.location.href = '/html/listagem/hospedagens.html';
   });
 
 function coletarDadosForm(){

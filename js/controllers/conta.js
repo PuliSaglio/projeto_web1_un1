@@ -175,7 +175,7 @@ function getUsuarioLogado() {
   const usuario = JSON.parse(sessionStorage.getItem('usuarioLogado'));
     
   if (usuario === null) {
-    window.location.href = "index.html";
+    window.location.href = "/html/index.html";
     return null;
   }
   
@@ -184,7 +184,7 @@ function getUsuarioLogado() {
 
 function logout() {
   sessionStorage.removeItem('usuarioLogado');
-  window.location.href = "index.html";
+  window.location.href = "/html/index.html";
 }
 
 function mostrarBotaoAdmin() {
@@ -195,11 +195,14 @@ function mostrarBotaoAdmin() {
             const div = document.createElement("div");
             div.className = "mb-4 text-end";
             div.innerHTML = `
-                <a href="cadastro-voo.html" class="btn btn-warning fw-bold me-2">
+                <a href="/html/cadastros/cadastro-voo.html" class="btn btn-warning fw-bold me-2">
                     Cadastrar Novo Voo (Admin)
                 </a>
-                <a href="cadastro-hospedagem.html" class="btn btn-warning fw-bold">
+                <a href="/html/cadastros/cadastro-hospedagem.html" class="btn btn-warning fw-bold me-2">
                     Cadastrar Novo Hotel (Admin)
+                </a>
+                <a href="/html/cadastros/cadastro-pacote.html" class="btn btn-warning fw-bold">
+                    Cadastrar Novo Pacote (Admin)
                 </a>
             `;
             container.insertBefore(div, container.firstChild.nextSibling);
