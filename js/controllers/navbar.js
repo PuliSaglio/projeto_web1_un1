@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   } else {
     authButtons.innerHTML = `
-      <a href="/html/cadastro.html" class="btn btn-outline-light me-2">Cadastro</a>
+      <a href="/html/cadastros/cadastro.html" class="btn btn-outline-light me-2">Cadastro</a>
       <a href="/html/login.html" class="btn btn-outline-light">Login</a>
     `;
   }
